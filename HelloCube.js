@@ -1,7 +1,9 @@
-const scene = new THREE.Scene();
+function activateXR() {
+
+    const scene = new THREE.Scene();
 
 // The cube will have a different color on each side.
-function activateXR() {
+
     const materials = [
         new THREE.MeshBasicMaterial({ color: 0xff0000 }),
         new THREE.MeshBasicMaterial({ color: 0x0000ff }),

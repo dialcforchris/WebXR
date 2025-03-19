@@ -83,8 +83,7 @@ session.addEventListener("select", (event) => {
 
 // Create a render loop that allows us to draw on the AR view.
 const onXRFrame = (time, frame) => {
-// Create a render loop that allows us to draw on the AR view.
-const onXRFrame = (time, frame) => {
+
   // Queue up the next draw request.
   session.requestAnimationFrame(onXRFrame);
 

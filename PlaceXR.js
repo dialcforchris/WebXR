@@ -52,8 +52,19 @@ async function activateXR() {
         flower = gltf.scene;
     });
 
+    let car;
+    loader.load("https://github.com/KhronosGroup/glTF-Sample-Models/blob/main/2.0/ToyCar/glTF/ToyCar.gltf", function (gltf))
+    {
+        car = gltf.scene;
+    });
+
     session.addEventListener("select", (event) => {
-        if (flower) {
+        if (car) {
+            const clone = car.clone();
+            clone.poition.copy(reticle.poition);
+            scene.add(clone);
+        }
+        else if (flower) {
             const clone = flower.clone();
             clone.position.copy(reticle.position);
             scene.add(clone);

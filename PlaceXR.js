@@ -7,7 +7,7 @@ async function activateXR() {
     // To be continued in upcoming steps.
     const scene = new THREE.Scene();
 
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.3);
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
     directionalLight.position.set(10, 15, 10);
     scene.add(directionalLight);
 
@@ -57,17 +57,23 @@ async function activateXR() {
         garage = gltf.scene;
     });
 
+    
+
     session.addEventListener("select", (event) => {
         if (garage)
         {
             const clone = garage.clone();
             clone.position.copy(reticle.position);
             scene.add(clone);
+            light.target = clone;
+            scene.add(light.target);        
         }
         else if (flower) {
             const clone = flower.clone();
             clone.position.copy(reticle.position);
             scene.add(clone);
+            light.target = clone;
+            scene.add(light.target);       
         }
     });
 

@@ -52,16 +52,16 @@ async function activateXR() {
         flower = gltf.scene;
     });
 
-    let car;
-    loader.load("https://github.com/KhronosGroup/glTF-Sample-Models/blob/main/1.0/CesiumMilkTruck/glTF/CesiumMilkTruck.gltf", function (gltf)
-    {
-        car = gltf.scene;
+    let garage;
+    loader.load("https://immersive-web.github.io/webxr-samples/media/gltf/garage/garage.gltf", function (gltf) {
+        garage = gltf.scene;
     });
 
     session.addEventListener("select", (event) => {
-        if (car) {
-            const clone = car.clone();
-            clone.poition.copy(reticle.poition);
+        if (garage)
+        {
+            const clone = garage.clone();
+            clone.position.copy(reticle.position);
             scene.add(clone);
         }
         else if (flower) {

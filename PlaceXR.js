@@ -53,9 +53,9 @@ async function activateXR() {
     });
 
     let garage;
-    loader.load("https://immersive-web.github.io/webxr-samples/media/gltf/garage/garage.gltf", function (gltf) {
-        garage = gltf.scene;
-    });
+    //loader.load("https://immersive-web.github.io/webxr-samples/media/gltf/garage/garage.gltf", function (gltf) {
+    //    garage = gltf.scene;
+    //});
 
     
 

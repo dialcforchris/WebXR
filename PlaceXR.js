@@ -53,7 +53,7 @@ async function activateXR() {
     });
 
     let car;
-    loader.load("https://github.com/KhronosGroup/glTF-Sample-Models/blob/main/2.0/ToyCar/glTF/ToyCar.gltf", function (gltf)
+    loader.load("https://github.com/KhronosGroup/glTF-Sample-Models/blob/main/1.0/CesiumMilkTruck/glTF/CesiumMilkTruck.gltf", function (gltf)
     {
         car = gltf.scene;
     });

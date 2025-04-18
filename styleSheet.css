@@ -5,7 +5,7 @@ body {
     font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
-    align-items: center;
+    /*align-items: center;*/
     height: 100vh;
     background-color: #1355fc;
     background-image:url(cave.jpg);
@@ -19,9 +19,11 @@ h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
     color: #333;
-    text-align: center;
-    width: 60%;
-    margin: 140px auto;
+    text-align:center;
+    width: 100%;
+    margin-left: 140px auto;
+    margin-top: 500px auto;
+    margin-right: 140px auto;
 }
 
 p {

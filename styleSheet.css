@@ -19,6 +19,8 @@ h1 {
     margin-bottom: 1rem;
     color: #333;
     text-align: center;
+    width: 60%;
+    margin: 140 auto;
 }
 
 p {

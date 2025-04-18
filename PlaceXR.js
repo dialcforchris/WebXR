@@ -48,35 +48,32 @@ async function activateXR() {
     })
 
     let flower;
-    loader.load("https://immersive-web.github.io/webxr-samples/media/gltf/sunflower/sunflower.gltf", function (gltf) {
+    loader.load("..WebXR/TestModel.gltf", function (gltf) {
         flower = gltf.scene;
-    });
-
-    let garage;
-    //loader.load("https://immersive-web.github.io/webxr-samples/media/gltf/garage/garage.gltf", function (gltf) {
-    //    garage = gltf.scene;
-    //});
-
-    
+    });    
 
     session.addEventListener("select", (event) => {
-        if (garage)
-        {
-            const clone = garage.clone();
-            clone.position.copy(reticle.position);
-            scene.add(clone);
-            light.target = clone;
-            scene.add(light.target);        
-        }
-        else if (flower) {
+       if (flower) {
             const clone = flower.clone();
             clone.position.copy(reticle.position);
             scene.add(clone);
             light.target = clone;
-            scene.add(light.target);       
+            scene.add(light.target);    
+            playAudio();   
         }
     });
 
+    function playAudio() {
+        var x = document.getElementById("audio");//createElement("AUDIO");
+         x.play();
+    
+    }
+    
+    function pauseAudio() {
+        var x = document.getElementById("audio");//createElement("AUDIO");
+      x.pause();
+    }
+    
     // Create a render loop that allows us to draw on the AR view.
     const onXRFrame = (time, frame) => {
 

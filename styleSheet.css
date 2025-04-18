@@ -7,7 +7,8 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f4f4f4;
+    background-color: #1355fc;
+    background-image:url(cave.jpg);
 }
 
 .container {
@@ -18,16 +19,16 @@ h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
     color: #333;
-    text-align: center;
+    text-align:center;
     width: 60%;
-    margin: 140 auto;
+    margin: 140px auto;
 }
 
 p {
     font-size: 1.2rem;
     margin-bottom: 2rem;
     color: #666;
-    text-align: center;
+    text-align:center;
 }
 
 .button-group {

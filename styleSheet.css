@@ -2,8 +2,8 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+    display:-webkit-flex;
     justify-content: center;
     /*align-items: center;*/
     height: 100vh;
@@ -16,27 +16,34 @@ body {
 }
 
 h1 {
-    font-size: 3rem;
+    font-size: 40px;
     margin-bottom: 1rem;
-    color: #333;
+    color: #ffffff;
     text-align:center;
-    width: 100%;
-    margin-left: 140px auto;
-    margin-top: 500px auto;
-    margin-right: 140px auto;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 5%;
+    margin-right: 10%;
+    margin-bottom: 20%;
 }
 
 p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    color: #666;
+    font-size: 26px;
+    margin-bottom: 20%;
+    color: #ffffff;
     text-align: center;
 }
 
 .button-group {
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: 5px;
+    align-items: center;
+    height: fit-content;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 5%;
+    margin-top: 20%;
 }
 
 button {
@@ -48,8 +55,47 @@ button {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    height: 1%;
+    width: 1%;
+    
+}
+.button-image {
+
+    width: 80%;
+    height: 80%;
+    margin-right: 5px;
+    margin-left: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 button:hover {
     background-color: #0056b3;
+}
+
+:xr-overlay {
+    /* force a transparent background */
+    background: rgba(0,0,0,0) !important;
+
+    /* act as containing block for descendants */
+    contain: paint !important;
+
+    /* the following styling is identical to :fullscreen */
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    width: 100% !important;
+    height: 100% !important;
+    transform: none !important;
+
+    /* intentionally not !important */
+    object-fit: contain;
 }

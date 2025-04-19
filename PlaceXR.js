@@ -1,4 +1,7 @@
-async function activateXR() {
+const audio = ["..WebXR/3D.mp3"];
+const models = ["..WebXR/TestModel.gltf"];
+
+async function activateXR(_idx) {
     // Add a canvas element and initialize a WebGL context that is compatible with WebXR.
     const canvas = document.createElement("canvas");
     document.body.appendChild(canvas);
@@ -47,14 +50,14 @@ async function activateXR() {
         scene.add(reticle);
     })
 
-    let flower;
-    loader.load("..WebXR/TestModel.gltf", function (gltf) {
-        flower = gltf.scene;
+    let model;
+    loader.load(models[_idx], function (gltf) {
+        model = gltf.scene;
     });    
 
     session.addEventListener("select", (event) => {
-       if (flower) {
-            const clone = flower.clone();
+       if (model) {
+            const clone = model.clone();
             clone.position.copy(reticle.position);
             scene.add(clone);
             light.target = clone;
@@ -63,8 +66,9 @@ async function activateXR() {
         }
     });
 
-    function playAudio() {
+    function playAudio(_idx) {
         var x = document.getElementById("audio");//createElement("AUDIO");
+        x.src = audio[_idx];
          x.play();
     
     }

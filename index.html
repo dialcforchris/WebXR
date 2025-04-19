@@ -5,21 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>Hello WebXR!</title>
+    <title>Three Companions</title>
 
     <!-- three.js -->
     <script src="https://unpkg.com/three@0.126.0/build/three.js"></script>
-    <script src="https://launchar.app/sdk/v1?key=9TXU6pKdC1IGp1w3o82rUQEdlvPjwfeK&redirect=true"></script>
+    <!--<script src="https://launchar.app/sdk/v1?key=9TXU6pKdC1IGp1w3o82rUQEdlvPjwfeK&redirect=true"></script>-->
     <script src="https://unpkg.com/three@0.126.0/examples/js/loaders/GLTFLoader.js"></script>
 </head>
 <body>
     <audio id="audio" src="3D.mp3"></audio>
+    <audio id="audio2" src="3D.mp3"></audio>
+    <audio id="audio3" src="3D.mp3"></audio>
+    <script src="PlaceXR.js"></script>
+
     <!-- Starting an immersive WebXR session requires user interaction.
         We start this one with a simple button. -->
     <!--<button onclick="activateXR()">Start Hello WebXR</button>
 -->
 <div>
-    <h1>Three Companions</h1>
+    <h1>Three<br>Companions</h1>
     
     <div><p>On this journey we are
         <br>exploring William’s<br>
@@ -28,15 +32,22 @@
         during the Battle of
         Trafalgar.</p>
     </div>
+   
     <div class="button-group">
         
-            <button id="button" onclick="start()">Start Hello WebXR</button>
-            <button id="button" onclick="start()">Start Hello WebXR</button>
-            <button id="button" onclick="start()">Start Hello WebXR</button>
+        <div class ="button" id = "button1" onclick="activateXR(0)"> <div class button-image><img src="icon1.png"></div></div>
+        <div class ="button" id="button2" onclick="activateXR(1)"><div class button-image><img src="icon2.png"></div></div>
+        <div class = "button" id="button3" onclick="activateXR(2)"><div class button-image><img src="icon1.png"></div></div>
+    
+    </div>
+    
+</div>
 
+<!-- <canvas>
+    <div class ="xr-overlay">
+        <div class = "button" id = "back" onclick="goBack()"><div class button-image><img src="back.png"></div></div>
     </div>
-    </div>
-    <script src="PlaceXR.js"></script>
+</canvas> -->
   
 </body>
 </html>

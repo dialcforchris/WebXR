@@ -1,10 +1,11 @@
 const audio = ["https://github.com/dialcforchris/WebXR/blob/main/3D.mp3"];
-const models = ["https://github.com/dialcforchris/WebXR/blob/main/TestModel.gltf",
-    "https://github.com/dialcforchris/WebXR/blob/main/TestModel.gltf",
-     "https://github.com/dialcforchris/WebXR/blob/main/TestModel.gltf"];
+const models = ["..WebXR/TestModel.gltf",
+    "..WebXR/TestModel.gltf",
+     "..WebXR/TestModel.gltf"];
 let index = -1;
 async function activateXR(_idx) {
     
+    console.log(_idx);
     // Add a canvas element and initialize a WebGL context that is compatible with WebXR.
     //I think i need to get the created canvas element and set it to active 
     const canvas = document.createElement("canvas");
@@ -69,7 +70,8 @@ async function activateXR(_idx) {
             scene.add(clone);
             light.target = clone;
             scene.add(light.target);    
-            playAudio();   
+            playAudio();  
+            session.removeEventListener("select", arguments.callee); 
         }
     });
 

@@ -1,13 +1,16 @@
 const audio = ["..WebXR/3D.mp3"];
 const models = ["..WebXR/TestModel.gltf"];
-
+const index = -1;
 async function activateXR(_idx) {
     // Add a canvas element and initialize a WebGL context that is compatible with WebXR.
     //I think i need to get the created canvas element and set it to active 
-    const canvas = document.createElement("canvas");
+    const canvas = document.get.createElement("canvas");
     document.body.appendChild(canvas);
+    const button = document.createElement("button");
+    button.onclick = closeAR();
+    document.body.canvas.appendChild(button);
     const gl = canvas.getContext("webgl", { xrCompatible: true });
-    
+    index = _idx;
     // To be continued in upcoming steps.
     const scene = new THREE.Scene();
 
@@ -74,11 +77,18 @@ async function activateXR(_idx) {
     
     }
     
-    function pauseAudio() {
+    function pauseAudio(_idx) {
         var x = document.getElementById("audio");//createElement("AUDIO");
       x.pause();
     }
     
+    function closeAR()
+    {
+        session.end();
+        pauseAudio(index);
+        document.body.removeChild(canvas);
+        document.body.removeChild(button);  
+    }
     // Create a render loop that allows us to draw on the AR view.
     const onXRFrame = (time, frame) => {
 

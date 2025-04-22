@@ -7,9 +7,9 @@ async function activateXR(_idx) {
     //I think i need to get the created canvas element and set it to active 
     const canvas = document.createElement("canvas");
     document.body.appendChild(canvas);
-    const button = document.createElement("button");
-    button.onclick = closeAR();
-    document.body.canvas.appendChild(button);
+   // const button = document.createElement("button");
+   // button.onclick = closeAR();
+    //document.body.canvas.appendChild(button);
     const gl = canvas.getContext("webgl", { xrCompatible: true });
     index = _idx;
     // To be continued in upcoming steps.
@@ -85,7 +85,7 @@ async function activateXR(_idx) {
     
     function closeAR()
     {
-        session.end();
+        //session.end();
         pauseAudio(index);
         document.body.removeChild(canvas);
         document.body.removeChild(button);  

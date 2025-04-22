@@ -1,5 +1,5 @@
-const audio = ["WebXR/3D.mp3"];
-const models = ["WebXR/TestModel.gltf"];
+const audio = ["..WebXR/3D.mp3"];
+const models = ["..WebXR/TestModel.gltf", "../WebXR/TestModel.gltf", "../WebXR/TestModel.gltf"];
 let index = -1;
 async function activateXR(_idx) {
     
@@ -7,9 +7,9 @@ async function activateXR(_idx) {
     //I think i need to get the created canvas element and set it to active 
     const canvas = document.createElement("canvas");
     document.body.appendChild(canvas);
-    //const button = document.createElement("button");
-    //button.onclick = closeAR();
-    //document.body.canvas.appendChild(button);
+    const button = document.createElement("button");
+    button.onclick = closeAR();
+    document.body.canvas.appendChild(button);
     const gl = canvas.getContext("webgl", { xrCompatible: true });
     index = _idx;
     // To be continued in upcoming steps.

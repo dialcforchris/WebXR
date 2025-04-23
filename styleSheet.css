@@ -81,4 +81,25 @@ button {
     width: 1%;
 }
 
+start-button {
+    background-color: #000000;
+    color: #000000;
+    position: relative;
+    width:auto;
+    height:auto;
+    font-size:   20px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 0.8rem 1.5rem;
+}
+start-text {
+    color: #ffffff;
+    font-size: 20px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
 

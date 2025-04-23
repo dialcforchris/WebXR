@@ -3,6 +3,11 @@ const models = ["./TestModel.gltf",
     "./TestModel.gltf",
      "./TestModel.gltf"];
 let index = -1;
+
+function openQRReader() {
+
+    window.open("./qrReader.html","_self")
+}
 async function activateXR(_idx) {
     
     console.log(_idx);

@@ -1,8 +1,25 @@
 <html>
     <head>
         <script src="./node_modules/html5-qrcode/html5-qrcode.min.js"></script>
+        <link rel="stylesheet" href="qr.css">
     </head>
-    <body id = "reader">
+    <body>
+        <div id="reader" style="width: 600px">
+            <p>Scan Image</p>
+        </div>
+        <script type="text/javascript">
+            function onScanSuccess(qrCodeMessage) {
+                // Handle the scanned QR code message
+                console.log(`QR Code detected: ${qrCodeMessage}`);
+                window.open(qrCodeMessage,"_self")
+            }
 
-    </body>
-</html>
+            function onScanError(errorMessage) {
+                // Handle scan error
+                console.warn(`QR Code scan error: ${errorMessage}`);
+            }
+
+            const html5QrCode = new Html5Qrcode("reader");
+            html5QrCode.start({ facingMode: "environment" }, { fps: 10, qrbox: 250 }, onScanSuccess, onScanError);
+        </script>
+    </html>

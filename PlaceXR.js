@@ -1,7 +1,7 @@
-const audio = ["https://github.com/dialcforchris/WebXR/blob/main/3D.mp3"];
-const models = ["..WebXR/TestModel.gltf",
-    "..WebXR/TestModel.gltf",
-     "..WebXR/TestModel.gltf"];
+const audio = ["./3D.mp3"];
+const models = ["./TestModel.gltf",
+    "./TestModel.gltf",
+     "./TestModel.gltf"];
 let index = -1;
 async function activateXR(_idx) {
     

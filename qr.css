@@ -31,11 +31,13 @@
     position: relative;
     overflow: hidden;
     background-color: #ffffff;
+    background-image:url(cave.jpg);
+
 }
 .reader-overlay {
     position: absolute;
     top: 65%;
-    ;
+    
     
     width: 100%;
     height: auto;

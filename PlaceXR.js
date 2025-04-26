@@ -1,16 +1,14 @@
-const audio = ["./3D.mp3"];
+const audio = ["./HolburneSpoonAudio_V1.mp3"];
 const models = ["./TestModel.gltf",
     "./TestModel.gltf",
      "./TestModel.gltf"];
 let index = -1;
 
-function openQRReader() {
-
-    window.open("./qrReader.html","_self")
-}
-async function activateXR(_idx) {
+import{ result} from './qrHandler.js'; 
+async function activateXR() {
     
-    console.log(_idx);
+
+    console.log(result);
     // Add a canvas element and initialize a WebGL context that is compatible with WebXR.
     //I think i need to get the created canvas element and set it to active 
     const canvas = document.createElement("canvas");
@@ -19,7 +17,7 @@ async function activateXR(_idx) {
    // button.onclick = closeAR();
     //document.body.canvas.appendChild(button);
     const gl = canvas.getContext("webgl", { xrCompatible: true });
-    index = _idx;
+    index = result;
     // To be continued in upcoming steps.
     const scene = new THREE.Scene();
 
@@ -64,7 +62,7 @@ async function activateXR(_idx) {
     })
 
     let model;
-    loader.load(models[_idx], function (gltf) {
+    loader.load(models[result], function (gltf) {
         model = gltf.scene;
     });    
 
@@ -80,14 +78,14 @@ async function activateXR(_idx) {
         }
     });
 
-    function playAudio(_idx) {
+    function playAudio() {
         var x = document.getElementById("audio");//createElement("AUDIO");
-        x.src = audio[_idx];
+        x.src = audio[0];
          x.play();
     
     }
     
-    function pauseAudio(_idx) {
+    function pauseAudio() {
         var x = document.getElementById("audio");//createElement("AUDIO");
       x.pause();
     }
@@ -95,7 +93,7 @@ async function activateXR(_idx) {
     function closeAR()
     {
         //session.end();
-        pauseAudio(index);
+        pauseAudio();
         document.body.removeChild(canvas);
         document.body.removeChild(button);  
     }

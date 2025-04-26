@@ -7,7 +7,7 @@ function startScanning() {
     // Handle the scanned QR code message
     console.log(`QR Code detected: ${qrCodeMessage}`);
     result = qrCodeMessage;
-    window.open(qrCodeMessage,"_self")
+    window.open("./viewer.html","_self")
 }
 
 function onScanError(errorMessage) {
@@ -16,3 +16,5 @@ function onScanError(errorMessage) {
 }
 
 let result;
+
+export {result};

@@ -8,15 +8,15 @@
     <title>Three Companions</title>
 
     <!-- three.js -->
-    <script src="https://unpkg.com/three@0.126.0/build/three.js"></script>
-    <!--<script src="https://launchar.app/sdk/v1?key=9TXU6pKdC1IGp1w3o82rUQEdlvPjwfeK&redirect=true"></script>-->
-    <script src="https://unpkg.com/three@0.126.0/examples/js/loaders/GLTFLoader.js"></script>
+    <!-- <script src="https://unpkg.com/three@0.126.0/build/three.js"></script>
+    <script src="https://launchar.app/sdk/v1?key=9TXU6pKdC1IGp1w3o82rUQEdlvPjwfeK&redirect=true"></script>-->
+    <!-- <script src="https://unpkg.com/three@0.126.0/examples/js/loaders/GLTFLoader.js"></script> -->
 </head>
 <body>
-    <audio id="audio" src="3D.mp3"></audio>
+    <!-- <audio id="audio" src="3D.mp3"></audio>
     <audio id="audio2" src="3D.mp3"></audio>
-    <audio id="audio3" src="3D.mp3"></audio>
-    <script src="PlaceXR.js"></script>
+    <audio id="audio3" src="3D.mp3"></audio> -->
+    <!-- <script src="PlaceXR.js"></script> -->
 
     <!-- Starting an immersive WebXR session requires user interaction.
         We start this one with a simple button. -->
@@ -41,10 +41,15 @@
     
     </div>
     <!-- <div class ="button-group"> -->
-    <button id = "start-button" onclick="openQRReader()">START</button>START</button>
+    <button id = "start-button" onclick="openQRReader()">START</button>
     <!-- </div> -->
 </div>
+<script>
+    function openQRReader() {
 
+window.open("./qrReader.html","_self")
+}
+</script>
 <!-- <canvas>
     <div class ="xr-overlay">
         <div class = "button" id = "back" onclick="goBack()"><div class button-image><img src="back.png"></div></div>

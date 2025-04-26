@@ -5,15 +5,18 @@
     <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
        <link rel="stylesheet" href="qr.css">
     </head>
-    <body>
-        <div id = "reader" class="reader">          
-            
+    <body onload="startScanning()">
+        <script src="qrHandler.js"></script>
+        <div id = "reader" >          
         </div>
-        <div id="overlay">
-            Scan Image
+        
+       <div class="reader-overlay">
+            <h2>Scan Image</h2>
         
         </div>
-        <script type="text/javascript">
+       
+        
+        <!--<script type="text/javascript">
             function onScanSuccess(qrCodeMessage) {
                 // Handle the scanned QR code message
                 console.log(`QR Code detected: ${qrCodeMessage}`);
@@ -28,5 +31,5 @@
             const html5QrCode = new Html5Qrcode("reader");
             html5QrCode.start({ facingMode: "environment" }, { fps: 10, qrbox:450 }, onScanSuccess, onScanError);
             
-        </script>
+        </script>-->
     </html>

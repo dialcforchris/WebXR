@@ -7,12 +7,12 @@
     </head>
     <body>
         <div id = "reader" class="reader">          
-             <div><reader-overlay>
-                Scan Image
-            </reader-overlay>
-            </div>
+            
         </div>
-      
+        <div class="reader-overlay">
+            <h2>Scan Image</h2>
+        
+        </div>
         <script type="text/javascript">
             function onScanSuccess(qrCodeMessage) {
                 // Handle the scanned QR code message
@@ -27,5 +27,6 @@
 
             const html5QrCode = new Html5Qrcode("reader");
             html5QrCode.start({ facingMode: "environment" }, { fps: 10, qrbox:450 }, onScanSuccess, onScanError);
+            
         </script>
     </html>

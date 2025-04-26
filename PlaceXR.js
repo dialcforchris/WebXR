@@ -1,14 +1,13 @@
-const audio = ["./HolburneSpoonAudio_V1.mp3"];
 const models = ["./TestModel.gltf",
     "./TestModel.gltf",
      "./TestModel.gltf"];
 let index = -1;
 
-import{ result} from './qrHandler.js'; 
-async function activateXR() {
+
+async function activateXR(_idx) {
     
 
-    console.log(result);
+    console.log(_idx);
     // Add a canvas element and initialize a WebGL context that is compatible with WebXR.
     //I think i need to get the created canvas element and set it to active 
     const canvas = document.createElement("canvas");
@@ -17,7 +16,7 @@ async function activateXR() {
    // button.onclick = closeAR();
     //document.body.canvas.appendChild(button);
     const gl = canvas.getContext("webgl", { xrCompatible: true });
-    index = result;
+    index = _idx;
     // To be continued in upcoming steps.
     const scene = new THREE.Scene();
 
@@ -62,12 +61,12 @@ async function activateXR() {
     })
 
     let model;
-    loader.load(models[result], function (gltf) {
+    loader.load(models[_idx], function (gltf) {
         model = gltf.scene;
     });    
-
+    let spawned = false;
     session.addEventListener("select", (event) => {
-       if (model) {
+       if (model&&!spawned) {
             const clone = model.clone();
             clone.position.copy(reticle.position);
             scene.add(clone);
@@ -75,12 +74,13 @@ async function activateXR() {
             scene.add(light.target);    
             playAudio();  
             session.removeEventListener("select", arguments.callee); 
+            spawned= true;
         }
     });
 
     function playAudio() {
         var x = document.getElementById("audio");//createElement("AUDIO");
-        x.src = audio[0];
+        // x.src = audio[0];
          x.play();
     
     }
@@ -92,10 +92,13 @@ async function activateXR() {
     
     function closeAR()
     {
-        //session.end();
+        session.end();
         pauseAudio();
         document.body.removeChild(canvas);
         document.body.removeChild(button);  
+        model = null;
+        spawned = false;
+        reticle = null;
     }
     // Create a render loop that allows us to draw on the AR view.
     const onXRFrame = (time, frame) => {

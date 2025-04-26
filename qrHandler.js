@@ -1,6 +1,6 @@
 function startScanning() {
     const html5QrCode = new Html5Qrcode("reader");
-    html5QrCode.start({ facingMode: "environment" }, { fps: 10, qrbox:450 }, onScanSuccess, onScanError);
+    html5QrCode.start({ facingMode: "environment" }, { fps: 10, qrbox:450,aspectRatio:1.333334 }, onScanSuccess, onScanError);
     }
   
   function onScanSuccess(qrCodeMessage) {

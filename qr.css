@@ -45,9 +45,21 @@
     justify-content: center;
     background-color: rgba(0, 0, 0, 0);
     color: #000000;
+    
+}
+#overlay {
+    position:absolute; /* Sit on top of the page content */
+    display:block; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 70%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0); /* Black background with opacity */
     font-size: 35px;
     font-weight: bold;
     text-align: center;
-    z-index: 100000000;
     font-family: sans-serif;
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
 }

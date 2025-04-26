@@ -37,7 +37,7 @@
 
 }
 .reader-overlay {
-    position:absolute;
+    position:fixed;
     width: 100%;
     height: auto;
     display: flex;
@@ -56,10 +56,6 @@
     
     width: 100%; /* Full width (cover the whole page) */
     height: 100%; /* Full height (cover the whole page) */
-    top: 70%;
-    left: 152px;
-    right: 152px;
-    bottom: 384px;
     background-color: rgba(0,0,0,0); /* Black background with opacity */
     font-size: 35px;
     font-weight: bold;

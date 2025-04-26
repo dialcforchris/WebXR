@@ -7,7 +7,7 @@ body {
     justify-content: center;
     /*align-items: center;*/
     height: 100vh;
-    background-color: #1355fc;
+    background-color: #000000;
     background-image:url(cave.jpg);
 }
 .container {

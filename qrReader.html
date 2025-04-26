@@ -6,11 +6,13 @@
        <link rel="stylesheet" href="qr.css">
     </head>
     <body>
-        <div id="reader" style="width: 250px; height: 250px;">
-            <p>Scan Image</p>
+        <div id = "reader">
+            <div>
+                <p>Scan QR Code</p>
+            </div>
         </div>
-            
-        </div>
+        
+      
         <script type="text/javascript">
             function onScanSuccess(qrCodeMessage) {
                 // Handle the scanned QR code message
@@ -24,6 +26,6 @@
             }
 
             const html5QrCode = new Html5Qrcode("reader");
-            html5QrCode.start({ facingMode: "environment" }, { fps: 10, qrbox:{width:250, height:250} }, onScanSuccess, onScanError);
+            html5QrCode.start({ facingMode: "environment" }, { fps: 10, qrbox:250 }, onScanSuccess, onScanError);
         </script>
     </html>

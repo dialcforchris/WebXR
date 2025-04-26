@@ -19,3 +19,5 @@
     border: 2px dashed #000000;
     box-sizing: border-box;
 }
+.hidden{display:none}
+#overlay{color:red;position:absolute}

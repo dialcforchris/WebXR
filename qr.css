@@ -26,8 +26,8 @@ body{
 #reader
 {
    width:100%;
-   
-   justify-content: center;
+   height: 100%;
+height: width;
     margin: 0 auto;
     border: 4px solid #000000;
     border-radius: 10px;

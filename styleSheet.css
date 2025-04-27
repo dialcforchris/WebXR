@@ -3,13 +3,15 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
-    display:-webkit-flex;
+    display: grid;
+    align-items: center;
+    align-content: stretch;
     justify-content: center;
-    /*align-items: center;*/
+    justify-items: stretch;
     height: 100vh;
+    width: 100vw;
     background-color: #000000;
     background-image:url(cave.jpg);
-    align-items: center;
 }
 .container {
     text-align: center;
@@ -18,20 +20,20 @@ body {
 h1 {
     font-size: clamp(1.5rem, 10vw, 40px);
     ;
-    margin-bottom: 1rem;
+    margin-bottom: 0px;
     color: #ffffff;
     text-align:center;
     width: 80%;
     margin-left: 10%;
     margin-top: 5%;
     margin-right: 10%;
-    margin-bottom: 20%;
+    /* margin-bottom: 20%; */
     font-family: sans-serif;
 }
 
 p {
     font-size: clamp(0.5rem, 6.5vw, 26px);
-    margin-bottom: 20%;
+    margin-bottom: 20vh;
     color: #ffffff;
     text-align: center;
     font-family: sans-serif;
@@ -45,13 +47,12 @@ p {
     height: fit-content;
     /* margin-left: 20vw; */
     /* margin-right: 20vw; */
-    margin-bottom: 5vh;
+    margin-bottom: 0px;
     /* margin-top: 20vh; */
 }
 
 button {
     padding: 0.8rem 1.5rem;
-   
     color: #fff;
     background-color: #ffffff;
     border: none;
@@ -64,12 +65,13 @@ button {
 }
 .button-image {
 
-    width: 80vw;
-    height: 80vh;
+    width: fit-content ;
+    height: fit-content;
     margin-right: 5px;
     margin-left: 5px;
     margin-top: 5px;
     margin-bottom: 5px;
+    ;
 }
 
 .button-back {
@@ -98,16 +100,17 @@ button-container {
     background-color: #f0f0f0;
     color: #000000;
     position: absolute;
-    width:120px;
-    height:60px;
+    width:20vw;
+    height:8vh;
+    border-radius: 5px;
     justify-content: center;
     align-items: center;
-    font-size:   20px;
-    margin-left:calc(50% - 60px);
+    font-size: 3vw;
+    margin-left:calc(50% - 10vw);
     
     /* margin-top: 5px; */
-    
-    padding: 0.8rem 1.5rem;
+    justify-items: center;
+    padding:0;
     font-family: sans-serif;
     font-weight: bold;
 }
@@ -172,6 +175,41 @@ start-text {
     position: relative;
     width:100vw;
     height: 10vh;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    margin: 0;
     align-items: center;
+
    
+}
+
+#topDiv
+{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #00000000;
+    display: contents;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+}
+#bottomDiv
+{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 10vh;
+    background-color: #00000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
 }

@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="styleSheet.css">
     <meta charset="UTF-8">
     <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+          content="width=device-width,height=device-height,user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>Three Companions</title>
     <script src="PlaceXR.js"></script>
     <!-- three.js -->
@@ -19,6 +19,19 @@
 <video id="video">
    
 </video>
+
+    
+    <!-- Starting an immersive WebXR session requires user interaction.
+        We start this one with a simple button. -->
+    <!--<button onclick="activateXR()">Start Hello WebXR</button>
+-->
+
+
+   
+    <xroverlay>
+<button-back onclick="closeAR()">EXIT AR</button-back>
+</xroverlay>
+</div>
 <div id="overlay">
     <div id="buttonHolder">
     <button id = "startAR-button" onclick="activateXR(0)">START AR</button>
@@ -26,17 +39,6 @@
     <audio id="audio" src = "./HolburneSpoonAudio_V1.mp3"></audio>
     </div>
     </div>
-    
-    <!-- Starting an immersive WebXR session requires user interaction.
-        We start this one with a simple button. -->
-    <!--<button onclick="activateXR()">Start Hello WebXR</button>
--->
-<canvas id="overlay" >
-<div>
-    <xroverlay>
-<button-back onclick="closeAR()">EXIT AR</button-back>
-</xroverlay>
-</div>
 </canvas>
 
 <!-- <canvas>

@@ -15,7 +15,7 @@ function spawnModel()
         reticle = null;
         scene.add(light.target);    
         playAudio();  
-        session.removeEventListener(spawnModel); 
+        session.removeEventListener("select",spawnModel); 
         spawned= true;
         playAudio();
     }

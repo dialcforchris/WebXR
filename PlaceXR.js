@@ -67,6 +67,7 @@ async function activateXR(_idx) {
        if (model&&!spawned) {
             const clone = model.clone();
             clone.position.copy(reticle.position);
+            loader.view.Scene.removeChild(reticle);
             scene.add(clone);
             light.target = clone;
             scene.removeChild(reticle);

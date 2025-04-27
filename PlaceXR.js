@@ -4,6 +4,7 @@ const models = ["./minaturePortrait.gltf",
 let index = -1;
 let video = document.getElementById("video");
 let reticle;
+let model;
 function spawnModel(event)
 {
     if (model&&spawned==false) {
@@ -75,7 +76,7 @@ async function activateXR(_idx) {
         scene.add(reticle);
     })
 
-    let model;
+    
     loader.load(models[_idx], function (gltf) {
         model = gltf.scene;
     });    

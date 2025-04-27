@@ -3,6 +3,23 @@ const models = ["./minaturePortrait.gltf",
      "./TestModel.gltf"];
 let index = -1;
 let video = document.getElementById("video");
+function spawnModel()
+{
+    if (model&&!spawned) {
+        const clone = model.clone();
+        clone.position.copy(reticle.position);
+        loader.view.Scene.removeChild(reticle);
+        scene.add(clone);
+        light.target = clone;
+        scene.removeChild(reticle);
+        reticle = null;
+        scene.add(light.target);    
+        playAudio();  
+        session.removeEventListener(spawnModel); 
+        spawned= true;
+        playAudio();
+    }
+}
 
 async function activateXR(_idx) {
     console.log(_idx);
@@ -63,22 +80,23 @@ async function activateXR(_idx) {
         model = gltf.scene;
     });    
     let spawned = false;
-    session.addEventListener("select", (event) => {
-       if (model&&!spawned) {
-            const clone = model.clone();
-            clone.position.copy(reticle.position);
-            loader.view.Scene.removeChild(reticle);
-            scene.add(clone);
-            light.target = clone;
-            scene.removeChild(reticle);
-            reticle = null;
-            scene.add(light.target);    
-            playAudio();  
-            session.removeEventListener("select", arguments.callee); 
-            spawned= true;
-            playAudio();
-        }
-    });
+    session.addEventListener("select", spawnModel);
+    //session.addEventListener("select", function () {
+    //    if (model&&!spawned) {
+    //         const clone = model.clone();
+    //         clone.position.copy(reticle.position);
+    //         loader.view.Scene.removeChild(reticle);
+    //         scene.add(clone);
+    //         light.target = clone;
+    //         scene.removeChild(reticle);
+    //         reticle = null;
+    //         scene.add(light.target);    
+    //         playAudio();  
+    //         session.removeEventListener("select"); 
+    //         spawned= true;
+    //         playAudio();
+    //     }
+    // });
 
    
     // Create a render loop that allows us to draw on the AR view.

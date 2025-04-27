@@ -5,7 +5,7 @@ let index = -1;
 let video = document.getElementById("video");
 function spawnModel()
 {
-    if (model&&!spawned) {
+    if (model&&spawned==null) {
         const clone = model.clone();
         clone.position.copy(reticle.position);
         loader.view.Scene.removeChild(reticle);

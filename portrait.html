@@ -6,19 +6,23 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>Three Companions</title>
-
+    <script src="PlaceXR.js"></script>
     <!-- three.js -->
     <script src="https://unpkg.com/three@0.126.0/build/three.js"></script>
     <!--<script src="https://launchar.app/sdk/v1?key=9TXU6pKdC1IGp1w3o82rUQEdlvPjwfeK&redirect=true"></script>-->
     <script src="https://unpkg.com/three@0.126.0/examples/js/loaders/GLTFLoader.js"></script>
 </head>
-<body>
+<body onload="videoStream()">
 
+   
+<div id ="camera">
+<video id="video"></video>
+<div id="overlay">
     <button id = "startAR-button" onclick="activateXR(0)">START AR</button>
     <audio id="audio" src = "./HolburneSpoonAudio_V1.mp3"></audio>
+    </div>
+    </div>
     
-    <script src="PlaceXR.js"></script>
-
     <!-- Starting an immersive WebXR session requires user interaction.
         We start this one with a simple button. -->
     <!--<button onclick="activateXR()">Start Hello WebXR</button>
@@ -26,7 +30,7 @@
 <canvas id="overlay" >
 <div>
     <xroverlay>
-<button-back>EXIT AR</button-back>
+<button-back onclick="closeAR()">EXIT AR</button-back>
 </xroverlay>
 </div>
 </canvas>

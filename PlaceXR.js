@@ -1,12 +1,10 @@
-const models = ["./TestModel.gltf",
+const models = ["./minaturePortrait.gltf",
     "./TestModel.gltf",
      "./TestModel.gltf"];
 let index = -1;
-
+let video = document.getElementById("video");
 
 async function activateXR(_idx) {
-    
-
     console.log(_idx);
     // Add a canvas element and initialize a WebGL context that is compatible with WebXR.
     //I think i need to get the created canvas element and set it to active 
@@ -71,35 +69,17 @@ async function activateXR(_idx) {
             clone.position.copy(reticle.position);
             scene.add(clone);
             light.target = clone;
+            scene.removeChild(reticle);
+            reticle = null;
             scene.add(light.target);    
             playAudio();  
             session.removeEventListener("select", arguments.callee); 
             spawned= true;
+            playAudio();
         }
     });
 
-    function playAudio() {
-        var x = document.getElementById("audio");//createElement("AUDIO");
-        // x.src = audio[0];
-         x.play();
-    
-    }
-    
-    function pauseAudio() {
-        var x = document.getElementById("audio");//createElement("AUDIO");
-      x.pause();
-    }
-    
-    function closeAR()
-    {
-        session.end();
-        pauseAudio();
-        document.body.removeChild(canvas);
-        document.body.removeChild(button);  
-        model = null;
-        spawned = false;
-        reticle = null;
-    }
+   
     // Create a render loop that allows us to draw on the AR view.
     const onXRFrame = (time, frame) => {
 
@@ -135,4 +115,42 @@ async function activateXR(_idx) {
         }
     }
     session.requestAnimationFrame(onXRFrame);
+}
+
+function playAudio() {
+    var x = document.getElementById("audio");//createElement("AUDIO");
+    // x.src = audio[0];
+     x.play();
+
+}
+
+
+function pauseAudio() {
+    var x = document.getElementById("audio");//createElement("AUDIO");
+  x.pause();
+}
+
+function videoStream() {
+    video = document.getElementById('video');
+    navigator.mediaDevices.getUserMedia({ video: true , audio: false}).then((stream) => {
+        video.srcObject = stream;
+        video.play();
+      })
+      .catch((err) => {
+        console.error(`An error occurred: ${err}`);
+      });
+
+}
+
+
+function closeAR()
+{
+    session.end();
+    pauseAudio();
+    document.body.removeChild(canvas);
+    document.body.removeChild(button);  
+    model = null;
+    spawned = false;
+    reticle = null;
+    window.open("./index.html","_self")
 }

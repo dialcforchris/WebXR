@@ -5,6 +5,7 @@ let index = -1;
 let video = document.getElementById("video");
 let reticle;
 let model;
+let spawned = false;
 function spawnModel(event)
 {
     if (model&&spawned==false) {
@@ -80,7 +81,7 @@ async function activateXR(_idx) {
     loader.load(models[_idx], function (gltf) {
         model = gltf.scene;
     });    
-    let spawned = false;
+    
     session.addEventListener("select", spawnModel);
     //session.addEventListener("select", function () {
     //    if (model&&!spawned) {

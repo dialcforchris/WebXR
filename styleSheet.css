@@ -121,9 +121,9 @@ button-container {
     font-size: 20px;
     margin:0 auto;
     margin-left: 50%;
-    margin-right: 50%;
+    
     margin-top: 50%;
-    margin-bottom: 50%;
+    
     padding: 0.8rem 1.5rem;
     font-family: sans-serif;
     font-weight: bold;
@@ -148,7 +148,7 @@ start-text {
 }
 #overlay
 {
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     justify-content: center;
     align-items: center;
@@ -169,7 +169,7 @@ start-text {
 #buttonHolder
 {
     position: relative;
-    width:auto;
+    width:100%;
     height: auto;
     align-items: center;
    

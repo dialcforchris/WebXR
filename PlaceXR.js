@@ -3,12 +3,11 @@ const models = ["./minaturePortrait.gltf",
      "./TestModel.gltf"];
 let index = -1;
 let video = document.getElementById("video");
-function spawnModel()
+function spawnModel(event)
 {
-    if (model&&spawned==null) {
+    if (model&&spawned==false) {
         const clone = model.clone();
         clone.position.copy(reticle.position);
-        loader.view.Scene.removeChild(reticle);
         scene.add(clone);
         light.target = clone;
         scene.removeChild(reticle);

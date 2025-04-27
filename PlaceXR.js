@@ -3,6 +3,7 @@ const models = ["./minaturePortrait.gltf",
      "./TestModel.gltf"];
 let index = -1;
 let video = document.getElementById("video");
+let reticle;
 function spawnModel(event)
 {
     if (model&&spawned==false) {
@@ -67,7 +68,7 @@ async function activateXR(_idx) {
     // Perform hit testing using the viewer as origin.
     const hitTestSource = await session.requestHitTestSource({ space: viewerSpace });
     const loader = new THREE.GLTFLoader();
-    let reticle;
+    
     loader.load("https://immersive-web.github.io/webxr-samples/media/gltf/reticle/reticle.gltf", function (gltf) {
         reticle = gltf.scene;
         reticle.visible = false;

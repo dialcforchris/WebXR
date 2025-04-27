@@ -11,11 +11,11 @@ function spawnModel(event)
     if (model&&spawned==false) {
         const clone = model.clone();
         clone.position.copy(reticle.position);
-        scene.add(clone);
+        session.scene.add(clone);
         light.target = clone;
-        scene.removeChild(reticle);
+        session.scene.removeChild(reticle);
         reticle = null;
-        scene.add(light.target);    
+        session.scene.add(light.target);    
         playAudio();  
         session.removeEventListener("select",spawnModel); 
         spawned= true;

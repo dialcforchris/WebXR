@@ -9,6 +9,8 @@ let spawned = false;
 
 async function activateXR(_idx) {
     document.getElementById("buttonHolder").style.display = "none";
+    document.getElementById("overlay").style.display = "block";
+
     console.log(_idx);
     // Add a canvas element and initialize a WebGL context that is compatible with WebXR.
     const canvas = document.createElement("canvas");
@@ -75,7 +77,6 @@ session.domOverlayState = {
     });    
     
     session.addEventListener("select", spawnModel,);
-    document.getElementById("overlay").style.display = "block";
     function spawnModel(event)
 {
     if (model&&spawned==false) {

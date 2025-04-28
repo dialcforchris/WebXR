@@ -74,6 +74,7 @@ session.domOverlayState = {
     });    
     
     session.addEventListener("select", spawnModel,);
+    document.getElementById("overlay)").style.display = "block";
     function spawnModel(event)
 {
     if (model&&spawned==false) {

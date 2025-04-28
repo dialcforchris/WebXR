@@ -39,8 +39,10 @@ async function activateXR(_idx) {
     // to handle the matrices independently.
     const camera = new THREE.PerspectiveCamera();
     camera.matrixAutoUpdate = false;
+    //add back button
+    let uiElement = document.getElementById("button-back");
     // Initialize a WebXR session using "immersive-ar".
-    const session = await navigator.xr.requestSession("immersive-ar", { requiredFeatures: ['hit-test'] }); session.updateRenderState({
+    const session = await navigator.xr.requestSession("immersive-ar", { requiredFeatures: ['hit-test'],optionalFeatures:['dom-overlay'], domOverlay: { root: uiElement } }); session.updateRenderState({
         baseLayer: new XRWebGLLayer(session, gl)
     });
 

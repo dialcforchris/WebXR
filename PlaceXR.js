@@ -10,8 +10,7 @@ let spawned = false;
 async function activateXR(_idx) {
     console.log(_idx);
     // Add a canvas element and initialize a WebGL context that is compatible with WebXR.
-    //I think i need to get the created canvas element and set it to active 
-    const canvas = document.getElementById("canvas");//createElement("canvas");
+    const canvas = document.createElement("canvas");
     document.body.appendChild(canvas);
    // const button = document.createElement("button");
    // button.onclick = closeAR();

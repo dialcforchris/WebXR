@@ -127,9 +127,9 @@ async function activateXR(_idx) {
             camera.projectionMatrix.fromArray(view.projectionMatrix);
             camera.updateMatrixWorld(true);
             const hitTestResults = frame.getHitTestResults(hitTestSource);
-            if (hitTestResults.length > 0 && reticle) {
+            if (hitTestResults.length > 0 && reticle&&!spawned) {
                 const hitPose = hitTestResults[0].getPose(referenceSpace);
-                reticle.visible = true;
+                reticle.visible =true;
                 reticle.position.set(hitPose.transform.position.x, hitPose.transform.position.y, hitPose.transform.position.z)
                 reticle.updateMatrixWorld(true);
             }

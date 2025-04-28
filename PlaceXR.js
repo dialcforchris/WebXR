@@ -41,7 +41,7 @@ async function activateXR(_idx) {
     //add back button
     
     
-    let uiElement = document.getElementById("button-back");
+    let uiElement = document.getElementById("overlay");
     // Initialize a WebXR session using "immersive-ar".
     const session = await navigator.xr.requestSession("immersive-ar", { requiredFeatures: ['hit-test'],
         optionalFeatures:['dom-overlay'], domOverlay: { root: uiElement } }); 
@@ -91,24 +91,6 @@ session.domOverlayState = {
         playAudio();
     }
 }
-
-    //session.addEventListener("select", function () {
-    //    if (model&&!spawned) {
-    //         const clone = model.clone();
-    //         clone.position.copy(reticle.position);
-    //         loader.view.Scene.removeChild(reticle);
-    //         scene.add(clone);
-    //         light.target = clone;
-    //         scene.removeChild(reticle);
-    //         reticle = null;
-    //         scene.add(light.target);    
-    //         playAudio();  
-    //         session.removeEventListener("select"); 
-    //         spawned= true;
-    //         playAudio();
-    //     }
-    // });
-
    
     // Create a render loop that allows us to draw on the AR view.
     const onXRFrame = (time, frame) => {

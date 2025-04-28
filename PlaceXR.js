@@ -9,7 +9,7 @@ let spawned = false;
 
 async function activateXR(_idx) {
     document.getElementById("buttonHolder").style.display = "none";
-    document.getElementById("overlay").style.display = "block";
+    document.getElementById("overlay").style.display = "grid";
 
     console.log(_idx);
     // Add a canvas element and initialize a WebGL context that is compatible with WebXR.

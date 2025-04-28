@@ -170,3 +170,10 @@ start-text {
     display: flex;
     flex-direction: column;
 }
+#startButtonHolder
+{
+    position: relative;
+    width:100%;
+    height: 10%;
+    align-items: center;
+}

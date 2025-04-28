@@ -40,12 +40,18 @@ async function activateXR(_idx) {
     const camera = new THREE.PerspectiveCamera();
     camera.matrixAutoUpdate = false;
     //add back button
+    
+    
     let uiElement = document.getElementById("button-back");
     // Initialize a WebXR session using "immersive-ar".
-    const session = await navigator.xr.requestSession("immersive-ar", { requiredFeatures: ['hit-test'],optionalFeatures:['dom-overlay'], domOverlay: { root: uiElement } }); session.updateRenderState({
+    const session = await navigator.xr.requestSession("immersive-ar", { requiredFeatures: ['hit-test'],
+        optionalFeatures:['dom-overlay'], domOverlay: { root: uiElement } }); 
+    session.updateRenderState({
         baseLayer: new XRWebGLLayer(session, gl)
+        
     });
-
+session.domOverlayState = {
+    root: uiElement,type:"screen"};
     // A 'local' reference space has a native origin that is located
     // near the viewer's position at the time the session was created.
     const referenceSpace = await session.requestReferenceSpace('local');

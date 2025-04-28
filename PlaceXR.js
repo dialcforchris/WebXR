@@ -73,10 +73,11 @@ async function activateXR(_idx) {
         const clone = model.clone();
         clone.position.copy(reticle.position);
         scene.add(clone);
-        light.target = clone;
-        scene.removeChild(reticle);
-        reticle = null;
-        scene.add(light.target);    
+        directionalLight.target = clone;
+        //light.target = clone;
+        reticle.visible = false;
+        
+        //scene.add(light.target);    
         playAudio();  
         session.removeEventListener("select",spawnModel); 
         spawned= true;

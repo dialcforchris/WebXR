@@ -84,7 +84,7 @@ button {
     margin:0 auto;
     /* margin-left: 0%;     */
     margin-top: 80%;
-    justify-self: center;
+    justify-self:anchor-center;
     padding: 0.8rem 1.5rem;
     font-family: sans-serif;
     font-weight: bold;
@@ -155,7 +155,7 @@ start-text {
     width: 100%;
     height: 100%;
     justify-content: center;
-    align-items: center;
+    align-items: baseline;
 
     background-color: rgba(0, 0, 0, 0);
 }

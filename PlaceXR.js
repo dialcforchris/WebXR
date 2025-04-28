@@ -66,17 +66,17 @@ async function activateXR(_idx) {
         model = gltf.scene;
     });    
     
-    session.addEventListener("select", spawnModel);
+    session.addEventListener("select", spawnModel,);
     function spawnModel(event)
 {
     if (model&&spawned==false) {
         const clone = model.clone();
         clone.position.copy(reticle.position);
-        session.scene.add(clone);
+        scene.add(clone);
         light.target = clone;
-        session.scene.removeChild(reticle);
+        scene.removeChild(reticle);
         reticle = null;
-        session.scene.add(light.target);    
+        scene.add(light.target);    
         playAudio();  
         session.removeEventListener("select",spawnModel); 
         spawned= true;

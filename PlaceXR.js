@@ -167,7 +167,7 @@ function videoStream() {
 
 
 function closeAR()
-{
+{ window.open("./index.html","_self")
     session.end();
     pauseAudio();
     document.body.removeChild(canvas);
@@ -175,5 +175,5 @@ function closeAR()
     model = null;
     spawned = false;
     reticle = null;
-    window.open("./index.html","_self")
+   
 }

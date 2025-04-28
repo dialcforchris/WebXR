@@ -6,22 +6,6 @@ let video = document.getElementById("video");
 let reticle;
 let model;
 let spawned = false;
-function spawnModel(event)
-{
-    if (model&&spawned==false) {
-        const clone = model.clone();
-        clone.position.copy(reticle.position);
-        session.scene.add(clone);
-        light.target = clone;
-        session.scene.removeChild(reticle);
-        reticle = null;
-        session.scene.add(light.target);    
-        playAudio();  
-        session.removeEventListener("select",spawnModel); 
-        spawned= true;
-        playAudio();
-    }
-}
 
 async function activateXR(_idx) {
     console.log(_idx);
@@ -83,6 +67,23 @@ async function activateXR(_idx) {
     });    
     
     session.addEventListener("select", spawnModel);
+    function spawnModel(event)
+{
+    if (model&&spawned==false) {
+        const clone = model.clone();
+        clone.position.copy(reticle.position);
+        session.scene.add(clone);
+        light.target = clone;
+        session.scene.removeChild(reticle);
+        reticle = null;
+        session.scene.add(light.target);    
+        playAudio();  
+        session.removeEventListener("select",spawnModel); 
+        spawned= true;
+        playAudio();
+    }
+}
+
     //session.addEventListener("select", function () {
     //    if (model&&!spawned) {
     //         const clone = model.clone();

@@ -13,7 +13,7 @@ body {
     ;
     background-size:cover;
     background-position:top center;
-    background-repeat:no-repeat;
+    background-repeat:no-repeat;    
     align-items: center;
 }
 .container {
@@ -107,7 +107,7 @@ button-container {
     z-index: 1;
 }
 #start-button {
-    background-color: #f0f0f0;
+    /* background-color: #f0f0f0; */
     color: #000000;
     position: absolute;
     width:120px;
@@ -123,6 +123,7 @@ button-container {
     font-family: sans-serif;
     font-weight: bold;
     background-image: image("button_V2.png");
+    background-size: 120px 60px;
 }
 #startAR-button
 { 

@@ -9,7 +9,10 @@ body {
     height: 100%;
     width: 100%;
     background-color: #000000;
-    /* background-image:url(cave.jpg); */
+    background-image:url("App\ background_final.jpg");
+    ;
+    background-size:contain;
+    background-position: center;
     align-items: center;
 }
 .container {
@@ -118,6 +121,7 @@ button-container {
     padding: 0.8rem 1.5rem;
     font-family: sans-serif;
     font-weight: bold;
+    background-image: image("button_V2.png");
 }
 #startAR-button
 { 
@@ -155,9 +159,10 @@ start-text {
     display: none;
     width: 100%;
     height: 100%;
-    justify-content: stretch;
+    align-content: stretch;
     align-items: end;
-
+justify-content: space-between;
+justify-items: center;
 
     background-color: rgba(0, 0, 0, 0);
 }

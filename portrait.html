@@ -12,15 +12,16 @@
     <!--<script src="https://launchar.app/sdk/v1?key=9TXU6pKdC1IGp1w3o82rUQEdlvPjwfeK&redirect=true"></script>-->
     <script src="https://unpkg.com/three@0.126.0/examples/js/loaders/GLTFLoader.js"></script>
 </head>
-<body>
+<body id="start-ar-body">
 
-<div id="buttonHolder">
+<!-- <div id="buttonHolder"> -->
+    <div>
     <button id = "startAR-button" onclick="activateXR(0)">START AR</button>
-    </div>
+    <!-- </div> -->
     <audio id="audio" src = "./HolburneSpoonAudio_V1.mp3"></audio>
     </div>
-   
-    <xroverlay>
+
+    <xroverlay id="overlay">
         <div id="overlay">
             <button id ="button-back" onclick="closeAR()">EXIT AR</button>
             </div>

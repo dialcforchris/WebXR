@@ -15,7 +15,7 @@ function startScanning() {
     result = qrCodeMessage;
    
 
-    window.open(`./${result}.html`,"_self")
+    window.open(`./portrait.html`,"_self")
     return result;
   }
 

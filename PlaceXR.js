@@ -4,7 +4,7 @@ const models = ["./minaturePortrait.gltf",
      const audio = ["./audio/Miniature-Portrait_FINAL.wav",
     "./audio/Tea-Bowl_FINAL.wav",  
     "./audio/Seal-Spoon_FINAL_V2.wav"];
-let index = -1;
+let index = 0;
 let video = document.getElementById("video");
 let reticle;
 let model;
@@ -29,12 +29,13 @@ function setIndex()
 
 async function activateXR() {
 
-    let _idx = setIndex();
-
+    setIndex();
+    var x = document.getElementById("audio");//createElement("AUDIO");
+    x.src = audio[index];
     document.getElementById("buttonHolder").style.display = "none";
     document.getElementById("overlay").style.display = "grid";
 
-    console.log(_idx);
+    console.log(index);
     // Add a canvas element and initialize a WebGL context that is compatible with WebXR.
     const canvas = document.createElement("canvas");
     document.body.appendChild(canvas);
@@ -95,7 +96,7 @@ session.domOverlayState = {
     })
 
     
-    loader.load(models[_idx], function (gltf) {
+    loader.load(models[index], function (gltf) {
         model = gltf.scene;
     });    
     
@@ -157,7 +158,7 @@ session.domOverlayState = {
 
 function playAudio() {
     var x = document.getElementById("audio");//createElement("AUDIO");
-     x.src = audio[0];
+
      x.play();
 
 }

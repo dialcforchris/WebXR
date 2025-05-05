@@ -11,8 +11,7 @@ let model;
 let spawned = false;
 function setIndex()
 {
-    let _result;
-    localStorage.getItem("result", _result);
+    let _result= localStorage.getItem("result");
     if (_result == "Miniature Portrait") {
         index = 0;
     }
@@ -25,11 +24,12 @@ function setIndex()
     else {
         index = 0;
     }
+    return index;
 }
 
-async function activateXR(_idx) {
+async function activateXR() {
 
-    setIndex(_idx);
+    let _idx = setIndex();
 
     document.getElementById("buttonHolder").style.display = "none";
     document.getElementById("overlay").style.display = "grid";

@@ -9,8 +9,10 @@ let video = document.getElementById("video");
 let reticle;
 let model;
 let spawned = false;
-function setIndex(_result)
+function setIndex()
 {
+    let _result;
+    localStorage.getItem("result", _result);
     if (_result == "Miniature Portrait") {
         index = 0;
     }
@@ -21,7 +23,7 @@ function setIndex(_result)
         index = 2;
     }
     else {
-        index = -1;
+        index = 0;
     }
 }
 

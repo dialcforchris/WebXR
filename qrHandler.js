@@ -1,8 +1,6 @@
 
 let result;
-var globalVariable ={
-  result: null
-};
+
 
 function startScanning() {
     const html5QrCode = new Html5Qrcode("reader");
@@ -14,9 +12,10 @@ function startScanning() {
     console.log(`QR Code detected: ${qrCodeMessage}`);
     result = qrCodeMessage;
    
+    localStorage.setItem("result", result);
 
     window.open(`./portrait.html`,"_self")
-    return result;
+    
   }
 
 function onScanError(errorMessage) {

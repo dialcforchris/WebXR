@@ -9,16 +9,15 @@ let video = document.getElementById("video");
 let reticle;
 let model;
 let spawned = false;
-let result = globalVariable.result;
-function setIndex(result)
+function setIndex(_result)
 {
-    if (result == "Miniature Portrait") {
+    if (_result == "Miniature Portrait") {
         index = 0;
     }
-    else if (result == "Tea Bowl") {
+    else if (_result == "Tea Bowl") {
         index = 1;
     }
-    else if (result == "Seal Spoon") {
+    else if (_result == "Seal Spoon") {
         index = 2;
     }
     else {

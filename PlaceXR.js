@@ -11,19 +11,18 @@ let model;
 let spawned = false;
 function setIndex()
 {
-    let _result= localStorage.getItem("result");
-    if (_result == "Miniature Portrait") {
+    const _result = localStorage.getItem("result");
+    console.log(_result);
+    if (_result === "Miniature Portrait") {
         index = 0;
     }
-    else if (_result == "Tea Bowl") {
+    else if (_result === "Tea Bowl") {
         index = 1;
     }
-    else if (_result == "Seal Spoon") {
+    else if (_result === "Seal Spoon") {
         index = 2;
     }
-    else {
-        index = 0;
-    }
+    
     return index;
 }
 

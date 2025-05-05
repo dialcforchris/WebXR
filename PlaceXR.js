@@ -1,13 +1,35 @@
 const models = ["./minaturePortrait.gltf",
-    "./TestModel.gltf",
+    "./spoon.gltf",
      "./TestModel.gltf"];
+     const audio = ["./audio/Miniature-Portrait_FINAL.wav",
+    "./audio/Tea-Bowl_FINAL.wav",  
+    "./audio/Seal-Spoon_FINAL_V2.wav"];
 let index = -1;
 let video = document.getElementById("video");
 let reticle;
 let model;
 let spawned = false;
+let result = globalVariable.result;
+function setIndex(result)
+{
+    if (result == "Miniature Portrait") {
+        index = 0;
+    }
+    else if (result == "Tea Bowl") {
+        index = 1;
+    }
+    else if (result == "Seal Spoon") {
+        index = 2;
+    }
+    else {
+        index = -1;
+    }
+}
 
 async function activateXR(_idx) {
+
+    setIndex(_idx);
+
     document.getElementById("buttonHolder").style.display = "none";
     document.getElementById("overlay").style.display = "grid";
 
@@ -19,7 +41,7 @@ async function activateXR(_idx) {
    // button.onclick = closeAR();
     //document.body.canvas.appendChild(button);
     const gl = canvas.getContext("webgl", { xrCompatible: true });
-    index = _idx;
+
     // To be continued in upcoming steps.
     const scene = new THREE.Scene();
 
@@ -134,7 +156,7 @@ session.domOverlayState = {
 
 function playAudio() {
     var x = document.getElementById("audio");//createElement("AUDIO");
-    // x.src = audio[0];
+     x.src = audio[0];
      x.play();
 
 }

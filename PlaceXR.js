@@ -11,7 +11,8 @@ let model;
 let spawned = false;
 function setIndex()
 {
-    const _result = localStorage.getItem("result");
+    const _result = "";
+    result = localStorage.getItem("result").toString().trim();
     console.log(_result);
     if (_result === "Miniature Portrait") {
         index = 0;

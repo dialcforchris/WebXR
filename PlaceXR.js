@@ -12,16 +12,21 @@ let spawned = false;
 function setIndex()
 {
     const _result = "";
-    result = localStorage.getItem("result").toString().trim();
+    _result = localStorage.getItem("result").toString().trim();
     console.log(_result);
-    if (_result === "Miniature Portrait") {
-        index = 0;
-    }
-    else if (_result === "Tea Bowl") {
-        index = 1;
-    }
-    else if (_result === "Seal Spoon") {
-        index = 2;
+    switch (_result) 
+    {
+        case "Miniature Portrait":
+            index = 0;
+            break;
+        case "Tea Bowl":
+            index = 1;
+            break;
+        case "Seal Spoon":
+            index = 2;
+            break;
+        default:
+            console.log("No match found for the result.");
     }
     
     return index;

@@ -11,7 +11,7 @@ let model;
 let spawned = false;
 function setIndex()
 {
-    const _result = "";
+    let _result = "";
     _result = localStorage.getItem("result").toString().trim();
     console.log(_result);
     switch (_result) 

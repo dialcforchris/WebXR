@@ -1,6 +1,6 @@
 const models = ["./minaturePortrait.gltf",
-    "./spoon.gltf",
-     "./TestModel.gltf"];
+     "./TestModel.gltf",
+    "./spoon.gltf"];
      const audio = ["./audio/Miniature-Portrait_FINAL.wav",
     "./audio/Tea-Bowl_FINAL.wav",  
     "./audio/Seal-Spoon_FINAL_V2.wav"];

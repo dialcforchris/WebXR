@@ -106,7 +106,9 @@ session.domOverlayState = {
         texture.repeat.set(1, 1);
     });
     const material = new THREE.MeshStandardMaterial({ map: texture });
-
+const dracoLoader = new THREE.DRACOLoader();
+    dracoLoader.setDecoderPath('./draco/'); // Set the path to the Draco decoder files
+    loader.setDecoderPath(dracoLoader);
    
     loader.load("https://immersive-web.github.io/webxr-samples/media/gltf/reticle/reticle.gltf", function (gltf) {
         reticle = gltf.scene;

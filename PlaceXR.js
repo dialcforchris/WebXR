@@ -1,6 +1,5 @@
 
-import * as THREE from 'three';
-import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+
 //import { DRACOLoader } from 'three/addons/loaders/DRACOLoader';
 // import { XRWebGLLayer } from 'webxr'; // Import the XRWebGLLayer class
 const models = ["./minaturePortrait.gltf",

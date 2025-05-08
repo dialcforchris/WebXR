@@ -15,7 +15,11 @@
           }
         }
         </script>
-        <script src="PlaceXR.js" type = "module"></script>
+        <script type="module">
+          import * as THREE from 'three';
+          import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+          </script>
+        <script src="PlaceXR.js"></script>
     <!-- three.js -->
     <!-- <script src="https://unpkg.com/three@0.126.0/build/three.js"></script> -->
     <!--<script src="https://launchar.app/sdk/v1?key=9TXU6pKdC1IGp1w3o82rUQEdlvPjwfeK&redirect=true"></script>-->

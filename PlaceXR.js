@@ -1,9 +1,15 @@
+
+
 const models = ["./minaturePortrait.gltf",
      "./TestModel.gltf",
     "./spoon.gltf"];
      const audio = ["./audio/Miniature-Portrait_FINAL.wav",
     "./audio/Tea-Bowl_FINAL.wav",  
     "./audio/Seal-Spoon_FINAL_V2.wav"];
+    const textures = ["./Diffuse - Miniature Portrait - final texture for Chris.png",
+    "./Diffuse - Tea Bowl - final texture for Chris.png",
+    "./Diffuse - Seal Spoon - final texture for Chris.png"];
+    
 let index = 0;
 let video = document.getElementById("video");
 let reticle;
@@ -93,9 +99,9 @@ session.domOverlayState = {
     // Perform hit testing using the viewer as origin.
     const hitTestSource = await session.requestHitTestSource({ space: viewerSpace });
     const loader = new THREE.GLTFLoader();
-    const dracoloader = new THREE.DRACOLoader();
-    dracoloader.setDecoderPath('./draco/');
-    loader.setDRACOLoader(dracoloader);
+    const texture = THREE.TextureLoader().load(textures[index]);
+    const material = new THREE.MeshStandardMaterial({ map: texture });
+
    
     loader.load("https://immersive-web.github.io/webxr-samples/media/gltf/reticle/reticle.gltf", function (gltf) {
         reticle = gltf.scene;
@@ -106,6 +112,7 @@ session.domOverlayState = {
     
     loader.load(models[index], function (gltf) {
         model = gltf.scene;
+        model.material = material;
     });    
     
     session.addEventListener("select", spawnModel,);

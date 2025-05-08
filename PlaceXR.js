@@ -93,7 +93,10 @@ session.domOverlayState = {
     // Perform hit testing using the viewer as origin.
     const hitTestSource = await session.requestHitTestSource({ space: viewerSpace });
     const loader = new THREE.GLTFLoader();
-    
+    const dracoloader = new THREE.DRACOLoader();
+    dracoloader.setDecoderPath('./draco/');
+    loader.setDRACOLoader(dracoloader);
+   
     loader.load("https://immersive-web.github.io/webxr-samples/media/gltf/reticle/reticle.gltf", function (gltf) {
         reticle = gltf.scene;
         reticle.visible = false;

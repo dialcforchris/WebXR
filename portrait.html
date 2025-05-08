@@ -6,7 +6,16 @@
     <meta name="viewport"
           content="width=device-width,height=device-height,user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>Three Companions</title>
-    <script src="PlaceXR.js" type = "module"></script>
+    
+    <script type="importmap">
+        {
+          "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@<version>/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@<version>/examples/jsm/"
+          }
+        }
+        </script>
+        <script src="PlaceXR.js" type = "module"></script>
     <!-- three.js -->
     <!-- <script src="https://unpkg.com/three@0.126.0/build/three.js"></script> -->
     <!--<script src="https://launchar.app/sdk/v1?key=9TXU6pKdC1IGp1w3o82rUQEdlvPjwfeK&redirect=true"></script>-->

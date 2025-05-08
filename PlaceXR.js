@@ -6,9 +6,9 @@ const models = ["./minaturePortrait.gltf",
      const audio = ["./audio/Miniature-Portrait_FINAL.wav",
     "./audio/Tea-Bowl_FINAL.wav",  
     "./audio/Seal-Spoon_FINAL_V2.wav"];
-    const textures = ["./Diffuse - Miniature Portrait - final texture for Chris.png",
-    "./Diffuse - Tea Bowl - final texture for Chris.png",
-    "./Diffuse - Seal Spoon - final texture for Chris.png"];
+    const textures = ["./Diffuse - Miniature Portrait - final texture for Chris.jpg",
+    "./Diffuse - Tea Bowl - final texture for Chris.jpg",
+    "./Diffuse - Seal Spoon - final texture for Chris.jpg"];
     
 let index = 0;
 let video = document.getElementById("video");
@@ -99,7 +99,8 @@ session.domOverlayState = {
     // Perform hit testing using the viewer as origin.
     const hitTestSource = await session.requestHitTestSource({ space: viewerSpace });
     const loader = new THREE.GLTFLoader();
-    const texture = THREE.TextureLoader().load(textures[index]);
+    const textureLoader = THREE.TextureLoader();
+    textureLoader.load(textures[index]);
     const material = new THREE.MeshStandardMaterial({ map: texture });
 
    

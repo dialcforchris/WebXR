@@ -100,15 +100,11 @@ session.domOverlayState = {
     const hitTestSource = await session.requestHitTestSource({ space: viewerSpace });
     const loader = new THREE.GLTFLoader();
     const textureLoader = new THREE.TextureLoader();
-    const texture = textureLoader.load(textures[index], function (texture) {
-        texture.wrapS = THREE.RepeatWrapping;
-        texture.wrapT = THREE.RepeatWrapping;
-        texture.repeat.set(1, 1);
-    });
+    const texture = textureLoader.load({url: textures[index]});
     const material = new THREE.MeshStandardMaterial({ map: texture });
-const dracoLoader = new THREE.DRACOLoader();
-    dracoLoader.setDecoderPath('./draco/'); // Set the path to the Draco decoder files
-    loader.setDecoderPath(dracoLoader);
+// const dracoLoader = new THREE.DRACOLoader();
+//     dracoLoader.setDecoderPath('./draco/'); // Set the path to the Draco decoder files
+//     loader.setDecoderPath(dracoLoader);
    
     loader.load("https://immersive-web.github.io/webxr-samples/media/gltf/reticle/reticle.gltf", function (gltf) {
         reticle = gltf.scene;

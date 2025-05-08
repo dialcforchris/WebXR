@@ -100,7 +100,11 @@ session.domOverlayState = {
     const hitTestSource = await session.requestHitTestSource({ space: viewerSpace });
     const loader = new THREE.GLTFLoader();
     const textureLoader = new THREE.TextureLoader();
-    const texture = textureLoader.load(textures[index]);
+    const texture = textureLoader.load(textures[index], function (texture) {
+        texture.wrapS = THREE.RepeatWrapping;
+        texture.wrapT = THREE.RepeatWrapping;
+        texture.repeat.set(1, 1);
+    });
     const material = new THREE.MeshStandardMaterial({ map: texture });
 
    

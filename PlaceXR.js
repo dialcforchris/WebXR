@@ -1,5 +1,8 @@
 
-
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
+import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader';
+import { XRWebGLLayer } from 'webxr'; // Import the XRWebGLLayer class
 const models = ["./minaturePortrait.gltf",
      "./TestModel.gltf",
     "./spoon.gltf"];
@@ -102,9 +105,9 @@ session.domOverlayState = {
     const textureLoader = new THREE.TextureLoader();
     const texture = textureLoader.load({url: textures[index]});
     const material = new THREE.MeshStandardMaterial({ map: texture });
-// const dracoLoader = new THREE.DRACOLoader();
-//     dracoLoader.setDecoderPath('./draco/'); // Set the path to the Draco decoder files
-//     loader.setDecoderPath(dracoLoader);
+const dracoLoader = new THREE.DRACOLoader();
+    dracoLoader.setDecoderPath('./draco/'); // Set the path to the Draco decoder files
+    loader.setDecoderPath(dracoLoader);
    
     loader.load("https://immersive-web.github.io/webxr-samples/media/gltf/reticle/reticle.gltf", function (gltf) {
         reticle = gltf.scene;

@@ -7,21 +7,25 @@
           content="width=device-width,height=device-height,user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>Three Companions</title>
     
-    <script type="importmap">
+    <!-- <script type="importmap">
         {
           "imports": {
             "three": "https://cdn.jsdelivr.net/npm/three@0.126.0/build/three.module.js",
             "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.126.0/examples/jsm/"
           }
         }
-        </script>
-        <script type="module">
+        </script> -->
+        <!-- <script type="module">
           import * as THREE from 'three';
           import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
           </script>
-        <script src="PlaceXR.js">
+        <script src="PlaceXR.js"> -->
 
-</script>
+<!-- </script> -->
+ <script type = "module">
+    import { CanvasUI } from './CanvasUI.js'
+    import {XRGestures} from './XRGestures.js'
+ </script>
     <!-- three.js -->
     <script src="https://unpkg.com/three@0.126.0/build/three.js"></script> 
     <!--<script src="https://launchar.app/sdk/v1?key=9TXU6pKdC1IGp1w3o82rUQEdlvPjwfeK&redirect=true"></script>-->
@@ -42,19 +46,6 @@
         <div id="overlay">
             <button id ="button-back" onclick="closeAR()">EXIT AR</button>
         </div>
-
-
-
-    
-      
-    
-
-
-<!-- <canvas>
-    <div class ="xr-overlay">
-        <div class = "button" id = "back" onclick="goBack()"><div class button-image><img src="back.png"></div></div>
-    </div>
-</canvas> -->
   
 </body>
 </html>

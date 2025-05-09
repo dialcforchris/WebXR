@@ -2,7 +2,7 @@
 
 //import { DRACOLoader } from 'three/addons/loaders/DRACOLoader';
 // import { XRWebGLLayer } from 'webxr'; // Import the XRWebGLLayer class
-const models = ["./ortrait.gltf",
+const models = ["./portrait.gltf",
      "./bowl.gltf",
     "./spoon.gltf"];
      const audio = ["./audio/Miniature-Portrait_FINAL.wav",

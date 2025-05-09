@@ -119,6 +119,8 @@ session.domOverlayState = {
         model = gltf.scene;
     });    
     
+    
+
     session.addEventListener("select", spawnModel,);
     function spawnModel(event)
 {

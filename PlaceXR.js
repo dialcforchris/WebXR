@@ -40,7 +40,7 @@ function setIndex()
     return index;
 }
 
-export async function activateXR() {
+async function activateXR() {
 
     setIndex();
     var x = document.getElementById("audio");//createElement("AUDIO");

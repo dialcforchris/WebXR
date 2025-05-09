@@ -117,7 +117,6 @@ session.domOverlayState = {
     
     loader.load(models[index], function (gltf) {
         model = gltf.scene;
-        model.material = material;
     });    
     
     session.addEventListener("select", spawnModel,);

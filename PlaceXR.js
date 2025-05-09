@@ -2,15 +2,15 @@
 
 //import { DRACOLoader } from 'three/addons/loaders/DRACOLoader';
 // import { XRWebGLLayer } from 'webxr'; // Import the XRWebGLLayer class
-const models = ["./minaturePortrait.gltf",
-     "./TestModel.gltf",
+const models = ["./ortrait.gltf",
+     "./bowl.gltf",
     "./spoon.gltf"];
      const audio = ["./audio/Miniature-Portrait_FINAL.wav",
     "./audio/Tea-Bowl_FINAL.wav",  
     "./audio/Seal-Spoon_FINAL_V2.wav"];
-    const textures = ["./Diffuse - Miniature Portrait - final texture for Chris.jpg",
-    "./Diffuse - Tea Bowl - final texture for Chris.jpg",
-    "./Diffuse - Seal Spoon - final texture for Chris.jpg"];
+    // const textures = ["./Diffuse - Miniature Portrait - final texture for Chris.jpg",
+    // "./Diffuse - Tea Bowl - final texture for Chris.jpg",
+    // "./Diffuse - Seal Spoon - final texture for Chris.jpg"];
     
 let index = 0;
 let video = document.getElementById("video");
@@ -101,9 +101,9 @@ session.domOverlayState = {
     // Perform hit testing using the viewer as origin.
     const hitTestSource = await session.requestHitTestSource({ space: viewerSpace });
     const loader = new THREE.GLTFLoader();
-    const textureLoader = new THREE.TextureLoader();
-    const texture = textureLoader.load({url: textures[index]});
-    const material = new THREE.MeshStandardMaterial({ map: texture });
+    // const textureLoader = new THREE.TextureLoader();
+    // const texture = textureLoader.load({url: textures[index]});
+    // const material = new THREE.MeshStandardMaterial({ map: texture });
 // const dracoLoader = new THREE.DRACOLoader();
 //     dracoLoader.setDecoderPath('./draco/'); // Set the path to the Draco decoder files
 //     loader.setDecoderPath(dracoLoader);

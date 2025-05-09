@@ -19,14 +19,13 @@
           import * as THREE from 'three';
           import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
           </script>
-        <script src="PlaceXR.js" type="module">
-import {activateXR} from "PlaceXR.js"
-module.activateXR = activateXR;
+        <script src="PlaceXR.js">
+
 </script>
     <!-- three.js -->
-    <!-- <script src="https://unpkg.com/three@0.126.0/build/three.js"></script> -->
+    <script src="https://unpkg.com/three@0.126.0/build/three.js"></script> 
     <!--<script src="https://launchar.app/sdk/v1?key=9TXU6pKdC1IGp1w3o82rUQEdlvPjwfeK&redirect=true"></script>-->
-    <!-- <script src="https://unpkg.com/three@0.126.0/examples/js/loaders/GLTFLoader.js"></script> -->
+    <script src="https://unpkg.com/three@0.126.0/examples/js/loaders/GLTFLoader.js"></script>
 <!-- <script type = "module"> import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader'
 </script> -->
 <body>
@@ -35,7 +34,7 @@ module.activateXR = activateXR;
 
 <div id="buttonHolder">
     <!-- <div> -->
-    <button id = "startAR-button" onclick="module.activateXR()">START AR</button>
+    <button id = "startAR-button" onclick="activateXR()">START AR</button>
     <!-- </div> -->
     <audio id="audio"></audio>
     </div>

@@ -87,7 +87,6 @@ async function activateXR() {
         context: gl
     });
     renderer.autoClear = false;
-    const gestures = new XRGestures(renderer);
     // The API directly updates the camera matrices.
     // Disable matrix auto updates so three.js doesn't attempt
     // to handle the matrices independently.
@@ -188,37 +187,7 @@ async function activateXR() {
                 reticle.position.set(hitPose.transform.position.x, hitPose.transform.position.y, hitPose.transform.position.z)
                 reticle.updateMatrixWorld(true);
             }
-            if(spawned==true)
-                {
-                   //ev attributes
-            //direction: string value, up or down
-            gestures.addEventListener( 'swipe', (ev)=>{
-                console.log(`swipe ${ev.direction}` );
-            });
-                   //ev attributes
-            //initialise: only exists for the first callback
-            //delta: Vector3 distance moved since previous callback
-            gestures.addEventListener( 'pan', (ev)=>{
-                if (ev.initialise !== undefined){
-                    console.log('pan: initialise');
-                }else{
-                    console.log(`pan x:${ev.delta.x.toFixed(3)}, y:${ev.delta.y.toFixed(3)}, x:${ev.delta.z.toFixed(3)}` );
-                }
-                });
-            
-                   //ev attributes
-            //initialise: only exists for the first callback
-            //delta: distance moved since previous callback
-            //scale: current distance between touches/start distance between touches
-            gestures.addEventListener( 'pinch', (ev)=>{
-                if (ev.initialise !== undefined){
-                    console.log('pinch: initialise');
-                }else{
-                    console.log(`pan x:${ev.delta.x.toFixed(3)}, y:${ev.delta.y.toFixed(3)}, x:${ev.delta.z.toFixed(3)}` );
-                }
-                });
-            
-                }
+         
             // Render the scene with THREE.WebGLRenderer.
             renderer.render(scene, camera)
         }

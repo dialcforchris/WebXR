@@ -246,13 +246,13 @@ function process_touchstart(ev) {
         case 1:
             let diff = new THREE.Vector2();
         let curr = new THREE.Vector2(ev.touches[0].clientX, ev.touches[0].clientY);
-        diff+= curr-touchpositions[i] 
+        diff+= curr-touchpositions[0] 
          clone.rotateY(diff.x*0.01);
           break;
         case 2:
             let currPos = new THREE.Vector2(ev.touches[0].clientX, ev.touches[0].clientY);
             let currPos2 = new THREE.Vector2(ev.touches[1].clientX, ev.touches[1].clientY);
-           let dist= currPos.position.distanceTo( currPos2.position ) - touchpositions[0].distanceTo( touchpositions[1] );
+           let dist= currPos.distanceTo( currPos2 ) - touchpositions[0].distanceTo( touchpositions[1] );
             clone.scale.set(clone.scale.x+dist*0.01, clone.scale.y+dist*0.01, clone.scale.z+dist*0.01);
         console.log("two touch start");  
           break;

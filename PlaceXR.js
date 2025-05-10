@@ -239,16 +239,12 @@ function process_touchstart(ev) {
   function process_touchmove(ev) 
   {
    
-    for(let i=0; i<ev.touches.length; i++)
-    {
-        let diff = new THREE.Vector2();
-        let curr = new THREE.Vector2(ev.touches[i].clientX, ev.touches[i].clientY);
-        diff+= curr-touchpositions[i] 
-        touchpositions[i].set(ev.touches[i].clientX, ev.touches[i].clientY);
-        console.log("touch move"+ i + " " + touchpositions[i]);
-    }
+   
     switch (ev.touches.length) {
         case 1:
+            let diff = new THREE.Vector2();
+        let curr = new THREE.Vector2(ev.touches[i].clientX, ev.touches[i].clientY);
+        diff+= curr-touchpositions[i] 
          clone.rotateY(diff.x*0.01);
           break;
         case 2:
@@ -264,8 +260,13 @@ function process_touchstart(ev) {
         console.log("gesture not supported"); 
         // gesture_not_supported(ev);
           break;
-    console.log("touch move"+ ev.touches[0].position);
   }
+
+  for(let i=0; i<ev.touches.length; i++)
+    {   
+        touchpositions[i].set(ev.touches[i].clientX, ev.touches[i].clientY);
+        console.log("touch move"+ i + " " + touchpositions[i]);
+    }
 }
   function process_touchcancel(ev)
   {

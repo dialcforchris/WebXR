@@ -250,10 +250,10 @@ function process_touchstart(ev) {
         console.log(diff); 
         if(diff<0)
         {
-            diff = 0;//360-diff;
+            diff = 360-diff;
         }
         console.log(diff); 
-        const radians = ( diff / 1000 ) % ( 2 * Math.PI );
+        const radians = ( diff / 10 ) % ( 2 * Math.PI );
         clone.rotateY(radians);
           break;
         case 2:

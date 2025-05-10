@@ -29,7 +29,7 @@ let model;
 let spawned = false;
 
 startXR.addEventListener("click", activateXR);
-closeAR.addEventListener("click", closeAR);
+closeXR.addEventListener("click", closeAR);
 
 function setIndex()
 {

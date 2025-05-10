@@ -7,6 +7,14 @@
           content="width=device-width,height=device-height,user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>Three Companions</title>
     <script>
+          let body = document.getElementsByClassName("body");
+    if (body.requestFullscreen) {
+    body.requestFullscreen();
+  } else if (body.webkitRequestFullscreen) { /* Safari */
+    body.webkitRequestFullscreen();
+  } else if (body.msRequestFullscreen) { /* IE11 */
+    body.msRequestFullscreen();
+  }
     window.screen.orientation.lock('portrait').then(function() {
         console.log("Screen orientation locked to portrait");
     }).catch(function(error) {

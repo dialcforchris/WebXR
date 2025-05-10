@@ -253,7 +253,7 @@ function process_touchstart(ev) {
         //     diff = 360-diff;
         // }
         console.log(diff); 
-        const radians = ( diff / 10 ) % ( 2 * Math.PI );
+        const radians = ( diff / 100 ) % ( 2 * Math.PI );
         clone.rotateY(radians);
           break;
         case 2:

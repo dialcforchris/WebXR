@@ -134,8 +134,8 @@ button-container {
     z-index: 1;
 }
 #start-button {
-    background-color: #1d1d1d00;
-    border: 0px solid #00ff3a;
+    background-color: #1d1d1d;
+    border: 1px solid #00ff3a;
     color: #ffffff;
     position: absolute;
     width:120px;
@@ -157,9 +157,9 @@ button-container {
 }
 #startAR-button
 { 
-    background-color: #1d1d1d00;
+    background-color: #1d1d1d;
     color: #ffffff;
-    border: 0px solid #00ff3a;
+    border: 1px solid #00ff3a;
     border-radius: 15px;
 
     position:fixed;

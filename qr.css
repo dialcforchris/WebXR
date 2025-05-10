@@ -71,7 +71,7 @@ body{
   }
   #text{
     position: absolute;
-    top:calc(50% - (450/2)px);
+    top:70%;
     left : 50%;
     font-size: 35px;
     color: white;

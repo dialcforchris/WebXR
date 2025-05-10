@@ -49,6 +49,8 @@ function setIndex()
     return index;
 }
 
+let clone;
+
 async function activateXR() {
 
    
@@ -131,7 +133,25 @@ async function activateXR() {
     
 
     session.addEventListener("select", spawnModel);
-
+    function spawnModel(event)
+    {
+        if (model&&spawned==false) {
+            clone = model.clone();
+            clone.position.copy(reticle.position);
+            scene.add(clone);
+            directionalLight.target = clone;
+            //light.target = clone;
+            reticle.visible = false;
+            
+            //scene.add(light.target);    
+            playAudio();  
+            session.removeEventListener("select",spawnModel); 
+            spawned= true;
+            playAudio();
+        }
+    
+      
+    }
     // Create a render loop that allows us to draw on the AR view.
     const onXRFrame = (time, frame) => {
 
@@ -176,27 +196,9 @@ function playAudio() {
      x.play();
 }
 
-function spawnModel(event)
-{
-    if (model&&spawned==false) {
-        const clone = model.clone();
-        clone.position.copy(reticle.position);
-        scene.add(clone);
-        directionalLight.target = clone;
-        //light.target = clone;
-        reticle.visible = false;
-        
-        //scene.add(light.target);    
-        playAudio();  
-        session.removeEventListener("select",spawnModel); 
-        spawned= true;
-        playAudio();
-    }
 
-  
-}
 
-let touchpositions = [0,0,0,0];
+let touchpositions = [new THREE.Vector2(), new THREE.Vector2()];
 
 // touchstart handler
 function process_touchstart(ev) {
@@ -221,10 +223,20 @@ function process_touchstart(ev) {
     }
   }
   
+  function rotate(ev) 
+  {
+
+  }
+
+  function scale(ev)
+  {
+
+  }
+
   function process_touchmove(ev) 
   {
-    ev.touches[0].
-    console.log("touch move");
+    
+    console.log("touch move"+ ev.touches[0].position);
   }
   function process_touchcancel(ev)
   {

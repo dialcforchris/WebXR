@@ -1,5 +1,12 @@
 
-
+import * as THREE from './libs/three/three.module.js';
+import { GLTFLoader } from './libs/three/jsm/GLTFLoader.js';
+import { CanvasUI } from './libs/CanvasUI.js'
+import { ARButton } from './libs/ARButton.js';
+import { LoadingBar } from './libs/LoadingBar.js';
+import { Player } from './libs/Player.js';
+import { RGBELoader } from './libs/three/jsm/RGBELoader.js';
+import { XRGestures } from './libs/XRGestures.js';
 //import { DRACOLoader } from 'three/addons/loaders/DRACOLoader';
 // import { XRWebGLLayer } from 'webxr'; // Import the XRWebGLLayer class
 const models = ["./portrait.gltf",
@@ -14,10 +21,16 @@ const models = ["./portrait.gltf",
     
 let index = 0;
 // let video = document.getElementById("video");
-let module = document.getElementById("module");
+// let module = document.getElementById("module");
+let startXR = document.getElementById("startAR-button");
+let closeAR = document.getElementById("closeAR-button");
 let reticle;
 let model;
 let spawned = false;
+
+startXR.addEventListener("click", activateXR);
+closeAR.addEventListener("click", closeAR);
+
 function setIndex()
 {
     let _result = "";
@@ -61,12 +74,12 @@ async function activateXR() {
     // To be continued in upcoming steps.
     const scene = new THREE.Scene();
 
-    const directionalLight = new module.THREE.DirectionalLight(0xffffff, 1);
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
     directionalLight.position.set(10, 15, 10);
     scene.add(directionalLight);
 
     // Set up the WebGLRenderer, which handles rendering to the session's base layer.
-    const renderer = new module.THREE.WebGLRenderer({
+    const renderer = new THREE.WebGLRenderer({
         alpha: true,
         preserveDrawingBuffer: true,
         canvas: canvas,

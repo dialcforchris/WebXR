@@ -9,10 +9,10 @@
     
 
 
-<script src ="PlaceXRModule.js" type = "module" id = "module"></script>
+<!-- <script src ="PlaceXRModule.js" type = "module" id = "module"></script> -->
 
 
-<script src="PlaceXR.js"></script>
+<script src="PlaceXR.js" type = "module"></script>
     <!-- three.js -->
     <script src="https://unpkg.com/three@0.126.0/build/three.js"></script> 
     <!-- <script src="https://unpkg.com/three@0.126.0/examples/js/loaders/GLTFLoader.js"></script> -->
@@ -22,12 +22,16 @@
     
 
 <div id="buttonHolder">
-    <button id = "startAR-button" onclick="activateXR()">START AR</button>
+    <button id = "startAR-button">START AR</button>
+    <!-- <button id = "startAR-button" onclick="activateXR()">START AR</button> -->
+
     <audio id="audio"></audio>
     </div>
 
         <div id="overlay">
-            <button id ="button-back" onclick="closeAR()">EXIT STORY</button>
+            <button id ="button-back">EXIT STORY</button>
+            <!-- <button id ="button-back" onclick="closeAR()">EXIT STORY</button> -->
+
         </div>
   
 </body>

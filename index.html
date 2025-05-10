@@ -7,12 +7,11 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>Three Companions</title>
 <script>
-let locOrientation = screen.lockOrientation || screen.mozLockOrientation || screen.msLockOrientation || screen.orientation.lock;
-if(locOrientation) {
-            locOrientation('portrait');
-        } else {
-            console.log("Screen orientation lock not supported");
-        }
+  window.screen.orientation.lock('portrait').then(function() {
+        console.log("Screen orientation locked to portrait");
+    }).catch(function(error) {
+        console.error("Error locking screen orientation: ", error);
+    });
         </script>
     <!-- three.js -->
     <!-- <script src="https://unpkg.com/three@0.126.0/build/three.js"></script>

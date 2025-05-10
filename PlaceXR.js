@@ -248,10 +248,10 @@ function process_touchstart(ev) {
         let curr = ev.touches[0].clientX;//, ev.touches[0].clientY);
         diff+= curr-touchpositions[0].x
         console.log(diff); 
-        if(diff<0)
-        {
-            diff = 360-diff;
-        }
+        // if(diff<0)
+        // {
+        //     diff = 360-diff;
+        // }
         console.log(diff); 
         const radians = ( diff / 10 ) % ( 2 * Math.PI );
         clone.rotateY(radians);

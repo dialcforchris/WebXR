@@ -98,13 +98,14 @@ async function activateXR() {
     let uiElement = document.getElementById("overlay");
     // Initialize a WebXR session using "immersive-ar".
     const session = await navigator.xr.requestSession("immersive-ar", { requiredFeatures: ['hit-test'],
-        optionalFeatures:['dom-overlay'], domOverlay: { root: uiElement } }); 
+        optionalFeatures:['dom-overlay'], domOverlay: { root: uiElement, type: "screen" } }); 
     session.updateRenderState({
         baseLayer: new XRWebGLLayer(session, gl)
         
     });
-session.domOverlayState = {
-    root: uiElement,type:"screen"};
+// session.domOverlayState = {
+//     root: uiElement,type:"screen"};
+
     // A 'local' reference space has a native origin that is located
     // near the viewer's position at the time the session was created.
     const referenceSpace = await session.requestReferenceSpace('local');

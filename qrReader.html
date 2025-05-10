@@ -2,21 +2,7 @@
     <head>
        <!--- <script src="./node_modules/html5-qrcode/html5-qrcode.min.js"></script>
     -->
-    <script>
-        let body = document.getElementsByClassName("body");
-    if (body.requestFullscreen) {
-    body.requestFullscreen();
-  } else if (body.webkitRequestFullscreen) { /* Safari */
-    body.webkitRequestFullscreen();
-  } else if (body.msRequestFullscreen) { /* IE11 */
-    body.msRequestFullscreen();
-  }
-  window.screen.orientation.lock('portrait').then(function() {
-        console.log("Screen orientation locked to portrait");
-    }).catch(function(error) {
-        console.error("Error locking screen orientation: ", error);
-    });
-        </script>
+   
             <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"> -->
        <link rel="stylesheet" href="qr.css">
@@ -24,9 +10,25 @@
     <body onload="startScanning()">
         <script src="qrHandler.js"></script>
       
-        <script> 
-        
-        </script>
+        <script>
+        var elem = document.documentElement;
+openFullscreen();
+/* View in fullscreen */
+function openFullscreen() {
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.webkitRequestFullscreen) { /* Safari */
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) { /* IE11 */
+    elem.msRequestFullscreen();
+  }
+}
+   window.screen.orientation.lock('portrait').then(function() {
+         console.log("Screen orientation locked to portrait");
+     }).catch(function(error) {
+         console.error("Error locking screen orientation: ", error);
+     });
+         </script>
         <div id = "reader">            
         </div>
         <div id="overlay">

@@ -4,7 +4,7 @@ let result;
 
 function startScanning() {
     const html5QrCode = new Html5Qrcode("reader");
-    html5QrCode.start({ facingMode: "environment" }, { fps: 10, qrbox:450,aspectRatio:1.333334 }, onScanSuccess, onScanError);
+    html5QrCode.start({ facingMode: "environment" }, { fps: 10, qrbox:250,aspectRatio:1.7777778 }, onScanSuccess);
     }
   
   function onScanSuccess(qrCodeMessage) {
@@ -18,10 +18,7 @@ function startScanning() {
     
   }
 
-function onScanError(errorMessage) {
-    // Handle scan error
-    console.warn(`QR Code scan error: ${errorMessage}`);
-}
+
 
 
 

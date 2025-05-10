@@ -138,6 +138,7 @@ async function activateXR() {
         if (model&&spawned==false) {
             clone = model.clone();
             clone.position.copy(reticle.position);
+            clone.rotateY(180);
             scene.add(clone);
             directionalLight.target = clone;
             //light.target = clone;
@@ -206,10 +207,12 @@ function process_touchstart(ev) {
     switch (ev.touches.length) {
       case 1:
         console.log("one touch start");
+        touchpositions[0].set(ev.touches[0].clientX, ev.touches[0].clientY);
         //handle_one_touch(ev);
         break;
       case 2:
       console.log("two touch start");  
+      touchpositions[1].set(ev.touches[1].clientX, ev.touches[1].clientY);
       //handle_two_touches(ev);
         break;
       case 3:
@@ -225,7 +228,7 @@ function process_touchstart(ev) {
   
   function rotate(ev) 
   {
-
+    //clone.
   }
 
   function scale(ev)
@@ -235,9 +238,35 @@ function process_touchstart(ev) {
 
   function process_touchmove(ev) 
   {
-    
+   
+    for(let i=0; i<ev.touches.length; i++)
+    {
+        let diff = new THREE.Vector2();
+        let curr = new THREE.Vector2(ev.touches[i].clientX, ev.touches[i].clientY);
+        diff+= curr-touchpositions[i] 
+        touchpositions[i].set(ev.touches[i].clientX, ev.touches[i].clientY);
+        console.log("touch move"+ i + " " + touchpositions[i]);
+    }
+    switch (ev.touches.length) {
+        case 1:
+         clone.rotateY(diff.x*0.01);
+          break;
+        case 2:
+           let dist= ev.touches[0].position.distanceTo( ev.touches[1].position ) - touchpositions[0].distanceTo( touchpositions[1] );
+            clone.scale.set(clone.scale.x+dist*0.01, clone.scale.y+dist*0.01, clone.scale.z+dist*0.01);
+        console.log("two touch start");  
+          break;
+        case 3:
+        console.log("three touch start");  
+        //handle_three_touches(ev);
+          break;
+        default:
+        console.log("gesture not supported"); 
+        // gesture_not_supported(ev);
+          break;
     console.log("touch move"+ ev.touches[0].position);
   }
+}
   function process_touchcancel(ev)
   {
     console.log("touch cancel");

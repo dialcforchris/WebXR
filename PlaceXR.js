@@ -13,7 +13,8 @@ const models = ["./portrait.gltf",
     // "./Diffuse - Seal Spoon - final texture for Chris.jpg"];
     
 let index = 0;
-let video = document.getElementById("video");
+// let video = document.getElementById("video");
+let module = document.getElementById("module");
 let reticle;
 let model;
 let spawned = false;
@@ -60,12 +61,12 @@ async function activateXR() {
     // To be continued in upcoming steps.
     const scene = new THREE.Scene();
 
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+    const directionalLight = new module.THREE.DirectionalLight(0xffffff, 1);
     directionalLight.position.set(10, 15, 10);
     scene.add(directionalLight);
 
     // Set up the WebGLRenderer, which handles rendering to the session's base layer.
-    const renderer = new THREE.WebGLRenderer({
+    const renderer = new module.THREE.WebGLRenderer({
         alpha: true,
         preserveDrawingBuffer: true,
         canvas: canvas,
@@ -190,17 +191,17 @@ function pauseAudio() {
   x.pause();
 }
 
-function videoStream() {
-    video = document.getElementById('video');
-    navigator.mediaDevices.getUserMedia({ video: {facingMode: 'environment'} , audio: false}).then((stream) => {
-        video.srcObject = stream;
-        video.play();
-      })
-      .catch((err) => {
-        console.error(`An error occurred: ${err}`);
-      });
+// function videoStream() {
+//     video = document.getElementById('video');
+//     navigator.mediaDevices.getUserMedia({ video: {facingMode: 'environment'} , audio: false}).then((stream) => {
+//         video.srcObject = stream;
+//         video.play();
+//       })
+//       .catch((err) => {
+//         console.error(`An error occurred: ${err}`);
+//       });
 
-}
+// }
 
 
 function closeAR()

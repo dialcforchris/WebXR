@@ -1,27 +1,21 @@
 
-// import * as THREE from './libs/three/three.module.js';
-// import { GLTFLoader } from './libs/three/jsm/GLTFLoader.js';
+
 import { CanvasUI } from './libs/CanvasUI.js'
 import { ARButton } from './libs/ARButton.js';
 import { LoadingBar } from './libs/LoadingBar.js';
 import { Player } from './libs/Player.js';
 import { RGBELoader } from './libs/three/jsm/RGBELoader.js';
 import { XRGestures } from './libs/XRGestures.js';
-//import { DRACOLoader } from 'three/addons/loaders/DRACOLoader';
-// import { XRWebGLLayer } from 'webxr'; // Import the XRWebGLLayer class
+
 const models = ["./portrait.gltf",
      "./bowl.gltf",
     "./spoon.gltf"];
      const audio = ["./audio/Miniature-Portrait_FINAL.wav",
     "./audio/Tea-Bowl_FINAL.wav",  
     "./audio/Seal-Spoon_FINAL_V2.wav"];
-    // const textures = ["./Diffuse - Miniature Portrait - final texture for Chris.jpg",
-    // "./Diffuse - Tea Bowl - final texture for Chris.jpg",
-    // "./Diffuse - Seal Spoon - final texture for Chris.jpg"];
     
 let index = 0;
-// let video = document.getElementById("video");
-// let module = document.getElementById("module");
+
 let startXR = document.getElementById("startAR-button");
 let closeXR = document.getElementById("button-back");
 let reticle;
@@ -57,6 +51,7 @@ function setIndex()
 
 async function activateXR() {
 
+   
     setIndex();
     var x = document.getElementById("audio");//createElement("AUDIO");
     x.src = audio[index];
@@ -96,6 +91,11 @@ async function activateXR() {
     
     
     let uiElement = document.getElementById("overlay");
+    //input listeners
+    uiElement.addEventListener("touchstart", process_touchstart, false);
+    uiElement.addEventListener("touchmove", process_touchmove, false);
+    uiElement.addEventListener("touchcancel", process_touchcancel, false);
+    uiElement.addEventListener("touchend", process_touchend, false);
     // Initialize a WebXR session using "immersive-ar".
     const session = await navigator.xr.requestSession("immersive-ar", { requiredFeatures: ['hit-test'],
         optionalFeatures:['dom-overlay'], domOverlay: { root: uiElement, type: "screen" } }); 
@@ -116,12 +116,6 @@ async function activateXR() {
     // Perform hit testing using the viewer as origin.
     const hitTestSource = await session.requestHitTestSource({ space: viewerSpace });
     const loader = new THREE.GLTFLoader();
-    // const textureLoader = new THREE.TextureLoader();
-    // const texture = textureLoader.load({url: textures[index]});
-    // const material = new THREE.MeshStandardMaterial({ map: texture });
-// const dracoLoader = new THREE.DRACOLoader();
-//     dracoLoader.setDecoderPath('./draco/'); // Set the path to the Draco decoder files
-//     loader.setDecoderPath(dracoLoader);
    
     loader.load("https://immersive-web.github.io/webxr-samples/media/gltf/reticle/reticle.gltf", function (gltf) {
         reticle = gltf.scene;
@@ -136,27 +130,8 @@ async function activateXR() {
     
     
 
-    session.addEventListener("select", spawnModel,);
-    function spawnModel(event)
-{
-    if (model&&spawned==false) {
-        const clone = model.clone();
-        clone.position.copy(reticle.position);
-        scene.add(clone);
-        directionalLight.target = clone;
-        //light.target = clone;
-        reticle.visible = false;
-        
-        //scene.add(light.target);    
-        playAudio();  
-        session.removeEventListener("select",spawnModel); 
-        spawned= true;
-        playAudio();
-    }
+    session.addEventListener("select", spawnModel);
 
-  
-}
-   
     // Create a render loop that allows us to draw on the AR view.
     const onXRFrame = (time, frame) => {
 
@@ -199,9 +174,93 @@ function playAudio() {
     var x = document.getElementById("audio");//createElement("AUDIO");
 
      x.play();
-
 }
 
+function spawnModel(event)
+{
+    if (model&&spawned==false) {
+        const clone = model.clone();
+        clone.position.copy(reticle.position);
+        scene.add(clone);
+        directionalLight.target = clone;
+        //light.target = clone;
+        reticle.visible = false;
+        
+        //scene.add(light.target);    
+        playAudio();  
+        session.removeEventListener("select",spawnModel); 
+        spawned= true;
+        playAudio();
+    }
+
+  
+}
+
+let touchpositions = [0,0,0,0];
+
+// touchstart handler
+function process_touchstart(ev) {
+    // Use the event's data to call out to the appropriate gesture handlers
+    switch (ev.touches.length) {
+      case 1:
+        console.log("one touch start");
+        //handle_one_touch(ev);
+        break;
+      case 2:
+      console.log("two touch start");  
+      //handle_two_touches(ev);
+        break;
+      case 3:
+      console.log("three touch start");  
+      //handle_three_touches(ev);
+        break;
+      default:
+      console.log("gesture not supported"); 
+      // gesture_not_supported(ev);
+        break;
+    }
+  }
+  
+  function process_touchmove(ev) 
+  {
+    ev.touches[0].
+    console.log("touch move");
+  }
+  function process_touchcancel(ev)
+  {
+    console.log("touch cancel");
+  }
+  function process_touchend(ev) 
+  {
+    // Use the event's data to call out to the appropriate gesture handlers
+    switch (ev.touches.length) {
+      case 1:
+        {
+            console.log("one touch end");
+        break;}
+      case 2:
+        console.log("two touch end");
+//        handle_two_touches(ev);
+        break;
+      case 3:
+        console.log("three touch end");
+
+        break;
+      default:
+        console.log("gesture not supported");
+//        gesture_not_supported(ev);
+        break;
+    }
+  }
+
+
+  function handle_one_touch(ev) {}
+  
+  function handle_two_touches(ev) {}
+    
+  function handle_three_touches(ev) {}
+    
+    function gesture_not_supported(ev) {}
 
 function pauseAudio() {
     var x = document.getElementById("audio");//createElement("AUDIO");
@@ -220,9 +279,9 @@ function pauseAudio() {
 
 // }
 
-
 function closeAR()
-{ window.open("./index.html","_self")
+{ 
+    window.open("./index.html","_self")
     session.end();
     pauseAudio();
     document.body.removeChild(canvas);

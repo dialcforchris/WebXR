@@ -7,7 +7,12 @@
           content="width=device-width,height=device-height,user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>Three Companions</title>
     <script>
-          screen.lock("portrait");
+        let locOrientation = screen.lockOrientation || screen.mozLockOrientation || screen.msLockOrientation || screen.orientation.lock;
+       if(locOrientation) {
+            locOrientation('portrait');
+        } else {
+            console.log("Screen orientation lock not supported");
+        }
     </script>
     
 <!-- <script src ="PlaceXRModule.js" type = "module" id = "module"></script> -->

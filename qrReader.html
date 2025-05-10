@@ -3,9 +3,14 @@
        <!--- <script src="./node_modules/html5-qrcode/html5-qrcode.min.js"></script>
     -->
     <script>
-      screen.lock("portrait");
-  </script>
-    <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+let locOrientation = screen.lockOrientation || screen.mozLockOrientation || screen.msLockOrientation || screen.orientation.lock;
+if(locOrientation) {
+            locOrientation('portrait');
+        } else {
+            console.log("Screen orientation lock not supported");
+        }
+        </script>
+            <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"> -->
        <link rel="stylesheet" href="qr.css">
     </head>

@@ -253,7 +253,8 @@ function process_touchstart(ev) {
             diff = 0;//360-diff;
         }
         console.log(diff); 
-         clone.setRotationFromEuler(new Three.Vector3(0,diff,0));
+        const radians = ( diff / 1000 ) % ( 2 * Math.PI );
+        clone.rotateY(radians);
           break;
         case 2:
             let currPos = new THREE.Vector2(ev.touches[0].clientX, ev.touches[0].clientY);

@@ -27,6 +27,7 @@ let closeXR = document.getElementById("button-back");
 let reticle;
 let model;
 let spawned = false;
+const gestures = new XRGestures(renderer);
 
 startXR.addEventListener("click", activateXR);
 closeXR.addEventListener("click", closeAR);
@@ -152,6 +153,38 @@ async function activateXR() {
         session.removeEventListener("select",spawnModel); 
         spawned= true;
         playAudio();
+    }
+
+    if(spawned==true)
+    {
+       //ev attributes
+//direction: string value, up or down
+gestures.addEventListener( 'swipe', (ev)=>{
+    console.log(`swipe ${ev.direction}` );
+});
+       //ev attributes
+//initialise: only exists for the first callback
+//delta: Vector3 distance moved since previous callback
+gestures.addEventListener( 'pan', (ev)=>{
+    if (ev.initialise !== undefined){
+        console.log('pan: initialise');
+    }else{
+        console.log(`pan x:${ev.delta.x.toFixed(3)}, y:${ev.delta.y.toFixed(3)}, x:${ev.delta.z.toFixed(3)}` );
+	}
+    });
+
+       //ev attributes
+//initialise: only exists for the first callback
+//delta: distance moved since previous callback
+//scale: current distance between touches/start distance between touches
+gestures.addEventListener( 'pinch', (ev)=>{
+    if (ev.initialise !== undefined){
+        console.log('pinch: initialise');
+    }else{
+        console.log(`pan x:${ev.delta.x.toFixed(3)}, y:${ev.delta.y.toFixed(3)}, x:${ev.delta.z.toFixed(3)}` );
+	}
+    });
+    
     }
 }
    

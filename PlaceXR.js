@@ -250,10 +250,10 @@ function process_touchstart(ev) {
         console.log(diff); 
         if(diff<0)
         {
-            diff = 180-diff;
+            diff = 0;//360-diff;
         }
         console.log(diff); 
-         //clone.rotateY(diff*0.01);
+         clone.rotation += clone.up*diff;
           break;
         case 2:
             let currPos = new THREE.Vector2(ev.touches[0].clientX, ev.touches[0].clientY);

@@ -253,15 +253,15 @@ function process_touchstart(ev) {
             diff = 0;//360-diff;
         }
         console.log(diff); 
-         clone.rotation += clone.up*diff;
+         clone.setRotationFromEuler(new Three.Vector3(0,diff,0));
           break;
         case 2:
             let currPos = new THREE.Vector2(ev.touches[0].clientX, ev.touches[0].clientY);
             let currPos2 = new THREE.Vector2(ev.touches[1].clientX, ev.touches[1].clientY);
            let dist= currPos.distanceTo( currPos2 ) - touchpositions[0].distanceTo( touchpositions[1] );
-           let scale = new THREE.Vector3(clone.scale.x+dist*0.01, clone.scale.y+dist*0.01, clone.scale.z+dist*0.01)
-           .clamp(new THREE.Vector3(0.5,0.5,0.5), new THREE.Vector3(1.5,1.5,1.5));
-            clone.scale.set(clone.scale.x+dist*0.01, clone.scale.y+dist*0.01, clone.scale.z+dist*0.01);
+           let scale = new THREE.Vector3(clone.scale.x+dist*0.01, clone.scale.y+dist*0.01, clone.scale.z+dist*0.01);
+           scale.clamp(new THREE.Vector3(0.5,0.5,0.5), new THREE.Vector3(1.5,1.5,1.5));
+            clone.scale.set(scale.x, scale.y, scale.z);
         console.log("two touch start");  
           break;
         case 3:

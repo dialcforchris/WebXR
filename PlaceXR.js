@@ -27,7 +27,7 @@ let closeXR = document.getElementById("button-back");
 let reticle;
 let model;
 let spawned = false;
-const gestures = new XRGestures(renderer);
+
 
 startXR.addEventListener("click", activateXR);
 closeXR.addEventListener("click", closeAR);
@@ -87,7 +87,7 @@ async function activateXR() {
         context: gl
     });
     renderer.autoClear = false;
-
+    const gestures = new XRGestures(renderer);
     // The API directly updates the camera matrices.
     // Disable matrix auto updates so three.js doesn't attempt
     // to handle the matrices independently.
@@ -184,7 +184,7 @@ gestures.addEventListener( 'pinch', (ev)=>{
         console.log(`pan x:${ev.delta.x.toFixed(3)}, y:${ev.delta.y.toFixed(3)}, x:${ev.delta.z.toFixed(3)}` );
 	}
     });
-    
+
     }
 }
    

@@ -23,7 +23,7 @@ let index = 0;
 // let video = document.getElementById("video");
 // let module = document.getElementById("module");
 let startXR = document.getElementById("startAR-button");
-let closeXR = document.getElementById("closeAR-button");
+let closeXR = document.getElementById("button-back");
 let reticle;
 let model;
 let spawned = false;

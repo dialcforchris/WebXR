@@ -244,15 +244,16 @@ function process_touchstart(ev) {
 
     switch (ev.touches.length) {
         case 1:
-            let diff = new THREE.Vector2();
-        let curr = new THREE.Vector2(ev.touches[0].clientX, ev.touches[0].clientY);
-        diff+= curr-touchpositions[0]
+            let diff = 0;
+        let curr = ev.touches[0].clientX;//, ev.touches[0].clientY);
+        diff+= curr-touchpositions[0].x
         console.log(diff); 
-        if(diff.x<0)
+        if(diff<0)
         {
-            diff.x = 180-diff.x;
+            diff = 180-diff;
         }
-         clone.rotateY(diff.x*0.01);
+        console.log(diff); 
+         //clone.rotateY(diff*0.01);
           break;
         case 2:
             let currPos = new THREE.Vector2(ev.touches[0].clientX, ev.touches[0].clientY);

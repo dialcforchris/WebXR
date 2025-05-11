@@ -19,11 +19,16 @@
 </head>
 <body id = "body" onload="launchViewer()">
     <audio id="audio"></audio>
-    
-    <model-viewer src = "./portrait.gltf" shadow-intensity="1" ar camera-controls touch-action="pan-y">
+    <script>
+        let audio = document.getElementById("audio");
+        audio.src = "./audio/Miniature-Portrait_FINAL.wav";
+        audio.play();
+    </script>
+    <model-viewer shadow-intensity="1" ar camera-controls touch-action="pan-y">
   
+
         <button slot="ar-button" id="ar-button">
-          View in your space
+          View in AR
         </button>
       
         <div id="ar-prompt">
@@ -35,6 +40,13 @@
         </button>
         </model-viewer>
     
+
+        <script>
+            function selectModel()
+            {
+
+            }
+        </script>
 <!-- <div id="buttonHolder">
     <button id = "startAR-button">START AR</button> -->
     <!-- <button id = "startAR-button" onclick="activateXR()">START AR</button> -->

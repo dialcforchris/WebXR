@@ -61,7 +61,7 @@
     font-family: dejaVuSerif;
     display: flex;
     justify-content: space-around;
-    height: 100vh;
+    height: 100%;
     width: 100%;
     background-color: #000000;
     background-image: url("App\ background_final.jpg");
@@ -76,7 +76,7 @@
     model-viewer {
       background-color: #eee;
       overflow-x: hidden;
-      height: 100vh;
+      height: 90vh;
         width: 100%;
         display: flex;
     }
@@ -176,7 +176,9 @@
       display: block;
     }
   
-    model-viewer > #default-exit-webxr-ar-button
+  
+    /* model-viewer > #default-exit-webxr-ar-button */
+    model-viewer::part(default-exit-webxr-ar-button) 
     {
         background-color: #1d1d1d;
     color: #ffffff;

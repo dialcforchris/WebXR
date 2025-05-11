@@ -25,6 +25,8 @@ let reticle;
 let model;
 let spawned = false;
 
+let exit = document.getElementById("default-exit-webxr-ar-button");
+exit.onclick.addEventListener("click", closeAR())
 
 //startXR?.addEventListener("click", activateXR);
 //closeXR?.addEventListener("click", closeAR);
@@ -69,6 +71,8 @@ let clone;
 
 function setup()
 {
+    let exit = document.getElementById("default-exit-webxr-ar-button");
+exit.onclick.addEventListener("click", closeAR())
      setIndex();
     
     let viewer = document.getElementById("view");
@@ -85,6 +89,7 @@ function launchViewer()
    
     playAudio();
 }
+
 
 
 // async function activateXR() {

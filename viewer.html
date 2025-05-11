@@ -17,14 +17,14 @@
    <script src="https://unpkg.com/three@0.126.0/examples/js/loaders/GLTFLoader.js"></script> -->
 
 </head>
-<body id = "body">
+<body id = "body" onload="init()">
     <audio id="audio"></audio>
     <script>
         // let _audio = document.getElementById("audio");
         // _audio.src = "./audio/Miniature-Portrait_FINAL.wav";
         // _audio.play();
     </script>
-    <model-viewer src="./spoon.gltf" poster="./posters/spoonPoster.png" shadow-intensity="1" ar camera-controls touch-action="pan-y">
+    <model-viewer src="./spoon.gltf" reveal = "manual" poster="./posters/spoonPoster.png" shadow-intensity="1" ar camera-controls touch-action="pan-y">
   
 
         <button slot="ar-button" id="ar-button" onclick="arModel()">
@@ -44,6 +44,8 @@
         <script>
             function arModel()
             {
+                const modelViewer = document.querySelector('model-viewer');
+                modelViewer.dismissPoster();
                 launchViewer();
             }
         </script>

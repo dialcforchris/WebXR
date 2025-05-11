@@ -70,8 +70,7 @@ let clone;
 
 function setup()
 {
-    let exit = document.getElementById("default-exit-webxr-ar-button");
-exit.onclick.addEventListener("click", closeAR())
+   
      setIndex();
     
     let viewer = document.getElementById("view");
@@ -87,6 +86,8 @@ function launchViewer()
    // setIndex();
    
     playAudio();
+    let exit = document.getElementById("default-exit-webxr-ar-button");
+    exit.onclick.addEventListener("click", closeAR())
 }
 
 

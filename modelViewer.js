@@ -14,9 +14,9 @@ const models = ["./portrait.gltf",
    "./audio/Tea-Bowl_FINAL.wav",  
    "./audio/Seal-Spoon_FINAL_V2.wav"];
    
-   const posters = ["./posters/portrait.png",
-   "./posters/bowl.png",
-   "./posters/spoon.png"];
+   const posters = ["./posters/portraitPoster.png",
+   "./posters/bowlPoster.png",
+   "./posters/spoonPoster.png"];
 let index = 0;
 
 let startXR = document.getElementById("startAR-button");

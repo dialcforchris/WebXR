@@ -35,7 +35,7 @@
         </button>
         </model-viewer>
     
-
+        <slot="exit-webxr-ar-button" id="exitSlot"></slot>
         <script>
             function arModel()
             {
@@ -176,7 +176,19 @@
       display: block;
     }
   
-  
+  #exitSlot
+  {
+    position: absolute;
+    left: 50%;
+    right:0%;
+    top:0%;
+    bottom:0%;
+    height: 100%;
+    transform: translateX(-50%);
+    bottom: 10%;
+    display: none;
+
+  }
     /* model-viewer > #default-exit-webxr-ar-button */
     model-viewer::part(default-exit-webxr-ar-button) 
     {

@@ -19,8 +19,20 @@
 </head>
 <body onload="launchViewer()">
     <audio id="audio"></audio>
-<model-viewer id="model-viewer" ar ar-modes="webxr scene-viewer quick-look" camera-controls touch-action="pan-y" shadow-intensity="2"></model-viewer>
-
+    <model-viewer shadow-intensity="1" ar camera-controls touch-action="pan-y">
+  
+        <button slot="ar-button" id="ar-button">
+          View in your space
+        </button>
+      
+        <div id="ar-prompt">
+          <!-- <img src="../../assets/hand.png"> -->
+        </div>
+      
+        <button id="ar-failure">
+          AR is not tracking!
+        </button>
+        </model-viewer>
 <!-- <div id="buttonHolder">
     <button id = "startAR-button">START AR</button> -->
     <!-- <button id = "startAR-button" onclick="activateXR()">START AR</button> -->
@@ -45,9 +57,15 @@
       display: none;
     }
   
+    body{
+        height: 100%;
+        width: 100%;
+    }
     model-viewer {
       background-color: #eee;
       overflow-x: hidden;
+      height: 100%;
+        width: 100%;
     }
   
     #ar-button {

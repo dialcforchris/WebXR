@@ -51,7 +51,7 @@ function setIndex()
 
 let clone;
 
-function lauchViewer()
+function launchViewer()
 {
     setIndex();
     let viewer = document.createElement("model-viewer");

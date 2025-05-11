@@ -59,7 +59,7 @@ function setIndex()
 
 let clone;
 
-function launchViewer()
+function setup()
 {
     setIndex();
     let viewer = document.getElementsByClassName("model-viewer");
@@ -67,7 +67,13 @@ function launchViewer()
    
     var x = document.getElementById("audio");//createElement("AUDIO");
     x.src = audio[index];
-    x.play();
+}
+
+function launchViewer()
+{
+   // setIndex();
+   
+    playAudio();
 }
 
 

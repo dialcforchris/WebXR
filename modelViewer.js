@@ -54,9 +54,9 @@ let clone;
 function launchViewer()
 {
     setIndex();
-    let viewer = document.createElement("model-viewer");
+    let viewer = document.getElementsByClassName("model-viewer");
     viewer.setAttribute("src", models[index]);
-    viewer.setAttribute("ar ar-modes" ,"ar-modes=scene-viewer quick-look camera-controls touch-action=pan-y");
+   
     var x = document.getElementById("audio");//createElement("AUDIO");
     x.src = audio[index];
 }

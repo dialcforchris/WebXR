@@ -25,8 +25,7 @@ let reticle;
 let model;
 let spawned = false;
 
-let exit = document.getElementById("default-exit-webxr-ar-button");
-exit.onclick.addEventListener("click", closeAR())
+
 
 //startXR?.addEventListener("click", activateXR);
 //closeXR?.addEventListener("click", closeAR);

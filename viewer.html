@@ -1,41 +1,167 @@
 <!doctype html>
 <html>
 <head>
-    <link rel="stylesheet" href="styleSheet.css">
+    <!-- <link rel="stylesheet" href="styleSheet.css"> -->
     <meta charset="UTF-8">
     <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+          content="width=device-width,height=device-height,user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>Three Companions</title>
+    
+    
 
+
+<script src="modelViewer.js" type = "module"></script>
     <!-- three.js -->
-    <script src="https://unpkg.com/three@0.126.0/build/three.js"></script>
-    <!--<script src="https://launchar.app/sdk/v1?key=9TXU6pKdC1IGp1w3o82rUQEdlvPjwfeK&redirect=true"></script>-->
-    <script src="https://unpkg.com/three@0.126.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+    <!-- <script src="https://unpkg.com/three@0.126.0/build/three.js"></script>
+   <script src="https://unpkg.com/three@0.126.0/examples/js/loaders/GLTFLoader.js"></script> -->
+
 </head>
 <body>
 
-    <audio id="audio" src="3D.mp3"></audio>
-    <audio id="audio2" src="3D.mp3"></audio>
-    <audio id="audio3" src="3D.mp3"></audio>
-    <script src="PlaceXR.js"></script>
 
-    <!-- Starting an immersive WebXR session requires user interaction.
-        We start this one with a simple button. -->
-    <!--<button onclick="activateXR()">Start Hello WebXR</button>
--->
-<canvas id="overlay" >
-<div>
-    <xroverlay>
-<button-back>EXIT AR</button-back>
-</xroverlay>
-</div>
-</canvas>
+<!-- <div id="buttonHolder">
+    <button id = "startAR-button">START AR</button> -->
+    <!-- <button id = "startAR-button" onclick="activateXR()">START AR</button> -->
 
-<!-- <canvas>
-    <div class ="xr-overlay">
-        <div class = "button" id = "back" onclick="goBack()"><div class button-image><img src="back.png"></div></div>
+    <!-- <audio id="audio"></audio>
     </div>
-</canvas> -->
+
+        <div id="overlay">
+            <button id ="button-back">EXIT STORY</button> -->
+            <!-- <button id ="button-back" onclick="closeAR()">EXIT STORY</button> -->
+
+        <!-- </div> -->
   
 </body>
+<style>
+    @font-face {
+    font-family: dejaVuSerif;
+    src: url(DejaVuSerif.ttf);
+ }
+    /* This keeps child nodes hidden while the element loads */
+    :not(:defined) > * {
+      display: none;
+    }
+  
+    model-viewer {
+      background-color: #eee;
+      overflow-x: hidden;
+    }
+  
+    #ar-button {
+      background-image: url(../../assets/ic_view_in_ar_new_googblue_48dp.png);
+      background-repeat: no-repeat;
+      background-size: 20px 20px;
+      background-position: 12px 50%;
+      background-color: #fff;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+      bottom: 132px;
+      padding: 0px 16px 0px 40px;
+      font-family: deva;
+      font-size: 14px;
+      color:#4285f4;
+      height: 36px;
+      line-height: 36px;
+      border-radius: 18px;
+      border: 1px solid #DADCE0;
+    }
+  
+    #ar-button:active {
+      background-color: #E8EAED;
+    }
+  
+    #ar-button:focus {
+      outline: none;
+    }
+  
+    #ar-button:focus-visible {
+      outline: 1px solid #4285f4;
+    }
+  
+    @keyframes circle {
+      from { transform: translateX(-50%) rotate(0deg) translateX(50px) rotate(0deg); }
+      to   { transform: translateX(-50%) rotate(360deg) translateX(50px) rotate(-360deg); }
+    }
+  
+    @keyframes elongate {
+      from { transform: translateX(100px); }
+      to   { transform: translateX(-100px); }
+    }
+  
+    model-viewer > #ar-prompt {
+      position: absolute;
+      left: 50%;
+      bottom: 175px;
+      animation: elongate 2s infinite ease-in-out alternate;
+      display: none;
+    }
+  
+    model-viewer[ar-status="session-started"] > #ar-prompt {
+      display: block;
+    }
+  
+    model-viewer > #ar-prompt > img {
+      animation: circle 4s linear infinite;
+    }
+  
+    model-viewer > #ar-failure {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 175px;
+      display: none;
+    }
+  
+    model-viewer[ar-tracking="not-tracking"] > #ar-failure {
+      display: block;
+    }
+  
+    .slider {
+      width: 100%;
+      text-align: center;
+      overflow: hidden;
+      position: absolute;
+      bottom: 16px;
+    }
+  
+    .slides {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+    }
+  
+    .slide {
+      scroll-snap-align: start;
+      flex-shrink: 0;
+      width: 100px;
+      height: 100px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-color: #fff;
+      margin-right: 10px;
+      border-radius: 10px;
+      border: none;
+      display: flex;
+    }
+  
+    .slide.selected {
+      border: 2px solid #4285f4;
+    }
+  
+    .slide:focus {
+      outline: none;
+    }
+  
+    .slide:focus-visible {
+      outline: 1px solid #4285f4;
+    }
+  
+  </style>
 </html>

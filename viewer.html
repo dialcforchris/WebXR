@@ -17,17 +17,17 @@
    <script src="https://unpkg.com/three@0.126.0/examples/js/loaders/GLTFLoader.js"></script> -->
 
 </head>
-<body id = "body" onload="launchViewer()">
+<body id = "body">
     <audio id="audio"></audio>
     <script>
-        let audio = document.getElementById("audio");
-        audio.src = "./audio/Miniature-Portrait_FINAL.wav";
-        audio.play();
+        // let _audio = document.getElementById("audio");
+        // _audio.src = "./audio/Miniature-Portrait_FINAL.wav";
+        // _audio.play();
     </script>
-    <model-viewer shadow-intensity="1" ar camera-controls touch-action="pan-y">
+    <model-viewer poster="./posters/spoonPoster.png" shadow-intensity="1" ar camera-controls touch-action="pan-y">
   
-
-        <button slot="ar-button" id="ar-button">
+<button onclick ="arModel()">press button</button>
+        <button slot="ar-button" id="ar-button" onclick="arModel()">
           View in AR
         </button>
       
@@ -42,9 +42,9 @@
     
 
         <script>
-            function selectModel()
+            function arModel()
             {
-
+                launchViewer();
             }
         </script>
 <!-- <div id="buttonHolder">

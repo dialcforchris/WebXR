@@ -67,6 +67,7 @@ function launchViewer()
    
     var x = document.getElementById("audio");//createElement("AUDIO");
     x.src = audio[index];
+    x.play();
 }
 
 

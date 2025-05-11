@@ -55,7 +55,7 @@ function launchViewer()
 {
     setIndex();
     let viewer = document.getElementsByClassName("model-viewer");
-    viewer.setAttribute("src", models[index]);
+    viewer.src = models[index];
    
     var x = document.getElementById("audio");//createElement("AUDIO");
     x.src = audio[index];

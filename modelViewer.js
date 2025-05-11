@@ -14,6 +14,9 @@ const models = ["./portrait.gltf",
    "./audio/Tea-Bowl_FINAL.wav",  
    "./audio/Seal-Spoon_FINAL_V2.wav"];
    
+   const posters = ["./posters/portrait.jpg",
+   "./posters/bowl.jpg",
+   "./posters/spoon.jpg"];
 let index = 0;
 
 let startXR = document.getElementById("startAR-button");
@@ -59,16 +62,18 @@ function setIndex()
 
 function getFilePath()
 {
+    setIndex();
     return models[index];
 }
 let clone;
 
 function setup()
 {
-    setIndex();
+     setIndex();
     
     let viewer = document.getElementById("view");
     viewer.src = models[index];
+    viewer.poster = posters[index];
   // viewer.dismissPoster();
     var x = document.getElementById("audio");//createElement("AUDIO");
     x.src = audio[index];

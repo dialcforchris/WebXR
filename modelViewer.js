@@ -43,6 +43,7 @@ function setIndex()
            index = 2;
            break;
        default:
+        index = 0;
            console.log("No match found for the result.");
    }
    

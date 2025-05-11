@@ -64,7 +64,7 @@ function setup()
     setIndex();
     let viewer = document.getElementsByClassName("model-viewer");
     viewer.src = models[index];
-   
+   viewer.dismissPoster();
     var x = document.getElementById("audio");//createElement("AUDIO");
     x.src = audio[index];
 }

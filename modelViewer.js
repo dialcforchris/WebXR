@@ -57,14 +57,19 @@ function setIndex()
    return index;
 }
 
+function getFilePath()
+{
+    return models[index];
+}
 let clone;
 
 function setup()
 {
     setIndex();
-    let viewer = document.getElementsByClassName("model-viewer");
+    
+    let viewer = document.getElementById("view");
     viewer.src = models[index];
-   viewer.dismissPoster();
+  // viewer.dismissPoster();
     var x = document.getElementById("audio");//createElement("AUDIO");
     x.src = audio[index];
 }

@@ -13,6 +13,9 @@
     <script>
       var elem = document.documentElement;
 openFullscreen();
+var requestFullScreen = elem.requestFullscreen || elem.mozRequestFullScreen || elem.webkitRequestFullScreen || elem.msRequestFullscreen;
+
+requestFullScreen.call(Elem);
 /* View in fullscreen */
 function openFullscreen() {
   if (elem.requestFullscreen) {

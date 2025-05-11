@@ -29,7 +29,14 @@ let spawned = false;
 function setIndex()
 {
    let _result = "";
-   _result = localStorage.getItem("result").toString().trim();
+   _result = localStorage.getItem("result");
+   if(_result==null)
+   {
+         _result = "Miniature Portrait";
+   }
+    else{
+        _result = _result.toString().trim();
+    }
    console.log(_result);
    switch (_result) 
    {

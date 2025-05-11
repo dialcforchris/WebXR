@@ -1,11 +1,11 @@
 
 
-import { CanvasUI } from './libs/CanvasUI.js'
-import { ARButton } from './libs/ARButton.js';
-import { LoadingBar } from './libs/LoadingBar.js';
-import { Player } from './libs/Player.js';
-import { RGBELoader } from './libs/three/jsm/RGBELoader.js';
-import { XRGestures } from './libs/XRGestures.js';
+// import { CanvasUI } from './libs/CanvasUI.js'
+// import { ARButton } from './libs/ARButton.js';
+// import { LoadingBar } from './libs/LoadingBar.js';
+// import { Player } from './libs/Player.js';
+// import { RGBELoader } from './libs/three/jsm/RGBELoader.js';
+// import { XRGestures } from './libs/XRGestures.js';
 
 const models = ["./portrait.gltf",
      "./bowl.gltf",
@@ -321,18 +321,6 @@ function pauseAudio() {
     var x = document.getElementById("audio");//createElement("AUDIO");
   x.pause();
 }
-
-// function videoStream() {
-//     video = document.getElementById('video');
-//     navigator.mediaDevices.getUserMedia({ video: {facingMode: 'environment'} , audio: false}).then((stream) => {
-//         video.srcObject = stream;
-//         video.play();
-//       })
-//       .catch((err) => {
-//         console.error(`An error occurred: ${err}`);
-//       });
-
-// }
 
 function closeAR()
 { 

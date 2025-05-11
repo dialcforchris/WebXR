@@ -10,28 +10,7 @@
   
 </head>
 <body id = "body">
-    <script>
-      var elem = document.documentElement;
-openFullscreen();
-var requestFullScreen = elem.requestFullscreen || elem.mozRequestFullScreen || elem.webkitRequestFullScreen || elem.msRequestFullscreen;
 
-requestFullScreen.call(Elem);
-/* View in fullscreen */
-function openFullscreen() {
-  if (elem.requestFullscreen) {
-    elem.requestFullscreen();
-  } else if (elem.webkitRequestFullscreen) { /* Safari */
-    elem.webkitRequestFullscreen();
-  } else if (elem.msRequestFullscreen) { /* IE11 */
-    elem.msRequestFullscreen();
-  }
-}
-      window.screen.orientation.lock('portrait').then(function() {
-            console.log("Screen orientation locked to portrait");
-        }).catch(function(error) {
-            console.error("Error locking screen orientation: ", error);
-        });
-            </script>
     
 <div>
     <h1>Three<br>Companions</h1>

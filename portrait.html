@@ -6,29 +6,8 @@
     <meta name="viewport"
           content="width=device-width,height=device-height,user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>Three Companions</title>
-    <script>
-          let body = document.getElementsByClassName("body");
-    if (body.requestFullscreen) {
-    body.requestFullscreen();
-  } else if (body.webkitRequestFullscreen) { /* Safari */
-    body.webkitRequestFullscreen();
-  } else if (body.msRequestFullscreen) { /* IE11 */
-    body.msRequestFullscreen();
-  }
-    window.screen.orientation.lock('portrait').then(function() {
-        console.log("Screen orientation locked to portrait");
-    }).catch(function(error) {
-        console.error("Error locking screen orientation: ", error);
-    });
-    //    let locOrientation = screen.lockOrientation || screen.mozLockOrientation || screen.msLockOrientation || screen.orientation.lock;
-    //    if(locOrientation) {
-    //         locOrientation('portrait');
-    //     } else {
-    //          console.log("Screen orientation lock not supported");
-    //     }
-    </script>
     
-<!-- <script src ="PlaceXRModule.js" type = "module" id = "module"></script> -->
+    
 
 
 <script src="PlaceXR.js" type = "module"></script>
@@ -38,31 +17,7 @@
 
 </head>
 <body>
-    <script>
-      var elem = document.documentElement;
-openFullscreen();
-/* View in fullscreen */
-function openFullscreen() {
-  if (elem.requestFullscreen) {
-    elem.requestFullscreen();
-  } else if (elem.webkitRequestFullscreen) { /* Safari */
-    elem.webkitRequestFullscreen();
-  } else if (elem.msRequestFullscreen) { /* IE11 */
-    elem.msRequestFullscreen();
-  }
-}
-  window.screen.orientation.lock('portrait').then(function() {
-      console.log("Screen orientation locked to portrait");
-  }).catch(function(error) {
-      console.error("Error locking screen orientation: ", error);
-  });
-  //    let locOrientation = screen.lockOrientation || screen.mozLockOrientation || screen.msLockOrientation || screen.orientation.lock;
-  //    if(locOrientation) {
-  //         locOrientation('portrait');
-  //     } else {
-  //          console.log("Screen orientation lock not supported");
-  //     }
-  </script>
+
 
 <div id="buttonHolder">
     <button id = "startAR-button">START AR</button>

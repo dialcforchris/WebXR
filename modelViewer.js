@@ -80,9 +80,11 @@ function setup()
 function launchViewer()
 {
    // setIndex();
-   
+   let exit = modelViewer.shadowRoot.querySelector('#default-exit-webxr-ar-button');
+   exit.addEventListener("click", closeAR());
+   exit.innerHTML = "Exit AR";
     playAudio();
-    let exit = document.getElementById("exit");
+    // let exit = document.getElementById("exit");
     // exit.style.display = "block";
     //  exit.addEventListener("click", closeAR())
 }

@@ -84,7 +84,7 @@ function launchViewer()
    let modelViewer = document.getElementById("view");
    let exit = modelViewer.shadowRoot.querySelector('#default-exit-webxr-ar-button');
    exit.addEventListener("click", closeAR());
-   //exit.innerHTML = "Exit AR";
+   exit.innerHTML = "Exit AR";
     playAudio();
     // let exit = document.getElementById("exit");
     // exit.style.display = "block";
@@ -104,11 +104,11 @@ function pauseAudio() {
 
 function closeAR()
 { 
-    if(ignore)
-    {
-        ignore = false;
-        return;
-    }
+   // if(ignore)
+    //{
+     //   ignore = false;
+       // return;
+    //}
    window.open("./index.html","_self")
    session.end();
    pauseAudio();

@@ -82,7 +82,8 @@ function launchViewer()
    
     playAudio();
     let exit = document.getElementById("exit");
-    exit.addEventListener("click", closeAR())
+    exit.style.display = "block";
+    // exit.addEventListener("click", closeAR())
 }
 
 function playAudio() {

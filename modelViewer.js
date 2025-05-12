@@ -82,9 +82,9 @@ function launchViewer()
 {
    // setIndex();
    let modelViewer = document.getElementById("view");
-   let exit = modelViewer.shadowRoot.querySelector('#default-exit-webxr-ar-button');
-   exit.addEventListener("click", closeAR());
-   exit.innerHTML = "Exit AR";
+  // let exit = modelViewer.shadowRoot.querySelector('#default-exit-webxr-ar-button');
+ //  exit.addEventListener("click", closeAR());
+   //exit.innerHTML = "Exit AR";
     playAudio();
     // let exit = document.getElementById("exit");
     // exit.style.display = "block";
@@ -112,7 +112,7 @@ function closeAR()
        // return;
     //}
    window.open("./index.html","_self")
-   modelViewer.exitXR();
+  // modelViewer.exitXR();
 
 
   

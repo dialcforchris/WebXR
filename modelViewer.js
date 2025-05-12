@@ -19,8 +19,8 @@ const models = ["./portrait.gltf",
    "./posters/spoonPoster.png"];
 let index = 0;
 
-let startXR = document.getElementById("startAR-button");
-let closeXR = document.getElementById("button-back");
+// let startXR = document.getElementById("startAR-button");
+// let closeXR = document.getElementById("button-back");
 let reticle;
 let model;
 let spawned = false;
@@ -84,7 +84,7 @@ function launchViewer()
    let modelViewer = document.getElementById("view");
    let exit = modelViewer.shadowRoot.querySelector('#default-exit-webxr-ar-button');
    exit.addEventListener("click", closeAR());
-   exit.innerHTML = "Exit AR";
+   //exit.innerHTML = "Exit AR";
     playAudio();
     // let exit = document.getElementById("exit");
     // exit.style.display = "block";

@@ -23,7 +23,7 @@
     <model-viewer id = "view" reveal = "manual" poster="./posters/spoonPoster.png" shadow-intensity="1" ar camera-controls touch-action="pan-y">
   
 
-        <button slot="ar-button" id="ar-button" onclick="arModel()">
+        <button slot="ar-button" onclick="arModel()">
           View in AR
         </button>
       
@@ -34,9 +34,6 @@
           AR is not tracking!
         </button>
 
-        <slot="exit-webxr-ar-button">
-           
-        </slot>
         
     </model-viewer>
 

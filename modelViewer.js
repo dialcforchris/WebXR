@@ -81,7 +81,7 @@ let ignore = true;
 function launchViewer()
 {
    // setIndex();
-   let modelViewer = document.getElementById("view");
+   //let modelViewer = document.getElementById("view");
   // let exit = modelViewer.shadowRoot.querySelector('#default-exit-webxr-ar-button');
  //  exit.addEventListener("click", closeAR());
    //exit.innerHTML = "Exit AR";

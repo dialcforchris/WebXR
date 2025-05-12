@@ -71,6 +71,7 @@ function setup()
     let viewer = document.getElementById("view");
     viewer.src = models[index];
     viewer.poster = posters[index];
+    
   // viewer.dismissPoster();
     var x = document.getElementById("audio");//createElement("AUDIO");
     x.src = audio[index];

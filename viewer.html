@@ -23,9 +23,9 @@
     <model-viewer id = "view" reveal = "manual" poster="./posters/spoonPoster.png" shadow-intensity="1" ar camera-controls touch-action="pan-y">
   
 
-        <button slot="ar-button" onclick="arModel()">
+        <!-- <button slot="ar-button" onclick="arModel()">
           View in AR
-        </button>
+        </button> -->
       
         <div id="ar-prompt">
         </div>
@@ -83,7 +83,7 @@
         display: flex;
     }
   
-    #ar-button {
+    model-viewer::part(default-ar-button) {
         background-color: #1d1d1d;
     color: #ffffff;
     border: 1px solid #00ff3a;

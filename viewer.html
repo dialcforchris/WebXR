@@ -34,7 +34,7 @@
           AR is not tracking!
         </button>
 
-        <slot="exit-webxr-ar-button">
+        <slot="exit-webxr-ar-button" id = "exitSlot">
             <button id="exit" onclick="close()">Exit AR</button>
         </slot>
         
@@ -201,7 +201,7 @@
 
   }
     /* model-viewer > #default-exit-webxr-ar-button */
-    model-viewer::part(default-exit-webxr-ar-button) 
+    /* model-viewer::part(default-exit-webxr-ar-button) 
     {
         background-color: #1d1d1d;
     color: #ffffff;
@@ -216,7 +216,7 @@
     margin:0 auto;
     top:150%;
     margin-top: 0%;
-    /* margin-left: 0%;     */
+     margin-left: 0%;     
     
     margin-bottom: 10%;
     justify-self:anchor-center;
@@ -225,7 +225,7 @@
     font-weight: bold;
     z-index: 20;
     display: none;
-    }
+    } */
 #exit
 {
     background-color: #1d1d1d;
@@ -233,7 +233,7 @@
     border: 1px solid #00ff3a;
     border-radius: 15px;
     position: relative;
-    width:140px;
+    width:120px;
     height:80px;
     justify-content: center;
     align-items: center;

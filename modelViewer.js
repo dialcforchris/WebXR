@@ -18,7 +18,7 @@ const models = ["./portrait.gltf",
    "./posters/bowlPoster.png",
    "./posters/spoonPoster.png"];
 let index = 0;
-
+let modelViewer = document.getElementById("view");
 // let startXR = document.getElementById("startAR-button");
 // let closeXR = document.getElementById("button-back");
 let reticle;
@@ -68,9 +68,9 @@ function setup()
    
      setIndex();
     
-    let viewer = document.getElementById("view");
-    viewer.src = models[index];
-    viewer.poster = posters[index];
+    //let viewer = document.getElementById("view");
+    modelViewer.src = models[index];
+    modelViewer.poster = posters[index];
     
   // viewer.dismissPoster();
     var x = document.getElementById("audio");//createElement("AUDIO");
@@ -81,7 +81,7 @@ let ignore = true;
 function launchViewer()
 {
    // setIndex();
-   let modelViewer = document.getElementById("view");
+  
    let exit = modelViewer.shadowRoot.querySelector('#default-exit-webxr-ar-button');
    exit.addEventListener("click", closeAR());
    exit.innerHTML = "Exit AR";
@@ -110,7 +110,8 @@ function closeAR()
        // return;
     //}
    window.open("./index.html","_self")
-   session.end();
+   modelViewer.exitXR();
+//    session.end();
    pauseAudio();
    document.body.removeChild(canvas);
    document.body.removeChild(button);  

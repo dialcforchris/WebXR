@@ -34,9 +34,17 @@
           AR is not tracking!
         </button>
 
-        <slot="exit-webxr-ar-button"><button id="exit">Exit AR</button></slot>
-        </model-viewer>
-    
+        <slot="exit-webxr-ar-button">
+            <button id="exit" onclick="close()">Exit AR</button>
+        </slot>
+        
+    </model-viewer>
+    <script>
+        function close()
+        {
+            closeAr();
+        }
+    </script>
        
         <script>
             function arModel()

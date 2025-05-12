@@ -77,6 +77,7 @@ function setup()
     x.src = audio[index];
 }
 
+let ignore = false;
 function launchViewer()
 {
    // setIndex();
@@ -103,6 +104,11 @@ function pauseAudio() {
 
 function closeAR()
 { 
+    if(ignore)
+    {
+        ignore = false;
+        return;
+    }
    window.open("./index.html","_self")
    session.end();
    pauseAudio();

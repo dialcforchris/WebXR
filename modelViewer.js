@@ -104,20 +104,17 @@ function pauseAudio() {
 
 function closeAR()
 { 
+    pauseAudio();
     let modelViewer = document.getElementById("view");
-   // if(ignore)
+
     //{
      //   ignore = false;
        // return;
     //}
    window.open("./index.html","_self")
    modelViewer.exitXR();
-//    session.end();
-   pauseAudio();
-   document.body.removeChild(canvas);
-   document.body.removeChild(button);  
-   model = null;
-   spawned = false;
-   reticle = null;
+
+
+  
   
 }

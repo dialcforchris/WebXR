@@ -86,7 +86,7 @@ function launchViewer()
    // setIndex();
    
     playAudio();
-    let exit = document.getElementById("default-exit-webxr-ar-button");
+    let exit = document.querySelector("default-exit-webxr-ar-button slot");
     exit.addEventListener("click", closeAR())
 }
 

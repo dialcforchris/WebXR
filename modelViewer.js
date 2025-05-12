@@ -77,7 +77,7 @@ function setup()
     x.src = audio[index];
 }
 
-let ignore = false;
+let ignore = true;
 function launchViewer()
 {
    // setIndex();

@@ -9,7 +9,7 @@ body {
     font-family: dejaVuSerif;
     display: flex;
     justify-content: space-around;
-    height: 100%;
+    height: 100vh;
     width: 100%;
     background-color: #000000;
     background-image: url("App\ background_final.jpg");

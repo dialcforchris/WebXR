@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+    <link rel="stylesheet" href="styleSheet.css">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Three Companions</title>
+
+  
+</head>
+<body id = "body">
+
+    
+<div id = "intro">
+    <h_intro>Three<br>Companions</h_intro>
+    
+    <div><p>Watch out for<br>
+        image panels<br>
+        like the below in<br>
+        the galleries to enter<br>
+        the AR and audio<br>
+        experience<br> 
+    </p>
+</div>
+   
+    <img src = "./Panel icon.png" id = "panelIcon"></img>
+
+    <div id = "startButtonHolder">
+
+    <button id = "start-button" onclick="openQRReader()">ENTER</button>
+
+</div>
+</div>
+<script>
+    function openQRReader() {
+
+window.open("./qrReader.html","_self")
+}
+</script>
+
+  
+</body>
+</html>

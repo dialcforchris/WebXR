@@ -24,7 +24,16 @@ body {
 .container {
     text-align: center;
 }
-
+#intro
+{
+    display: grid;
+        align-content: space-between;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+        align-items: stretch;
+        justify-items: center;
+}
 #start-ar-body
 {
     justify-content:end;
@@ -41,7 +50,8 @@ body {
 }
 h1 {
     font-size: clamp(1.5rem, 10vw, 40px);
-    ;
+    align-items: center;
+    justify-items: center;
     margin-bottom: 1rem;
     color: #ffffff;
     text-align:center;
@@ -50,6 +60,21 @@ h1 {
     margin-top: 5%;
     margin-right: 10%;
     margin-bottom: 20%;
+    font-family: dejaVuSerif;
+}
+
+h_intro
+{
+    font-size: clamp(1.5rem, 10vw, 40px);
+    align-items: center;
+    justify-items: center;
+    color: #ffffff;
+    text-align: center;
+    width: 100%;
+    margin-left: 0%;
+    margin-top: 10%;
+    margin-right: 0%;
+    margin-bottom: 0;
     font-family: dejaVuSerif;
 }
 
@@ -99,7 +124,13 @@ button {
     margin-bottom: 5px;
 }
 
- 
+ #panelIcon
+ {
+    width:140px;
+    height: 140px;
+    align-self: center;
+
+ }
 #button-back {
     background-color: #1d1d1d;
     color: #ffffff;

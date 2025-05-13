@@ -10,7 +10,7 @@ body {
     display: flex;
     justify-content: space-around;
     height: 100vh;
-    width: 100%;
+    width: 100vw;
     background-color: #000000;
     background-image: url("App\ background_final.jpg");
     background-size: 100%;

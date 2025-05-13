@@ -14,7 +14,7 @@ function startScanning() {
       aspect = innerWidth / innerHeight;
     }
    
-    html5QrCode.start({ facingMode: "environment" }, { fps: 10, qrbox:{width:innerWidth*0.8, height:innerWidth*0.8}, aspectRatio: aspect}, onScanSuccess);
+    html5QrCode.start({ facingMode: "environment" }, { fps: 10, qrbox:{width:450, height:450}, aspectRatio: aspect}, onScanSuccess);
     }
   
   function onScanSuccess(qrCodeMessage) {

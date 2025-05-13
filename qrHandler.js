@@ -4,7 +4,17 @@ let result;
 
 function startScanning() {
     const html5QrCode = new Html5Qrcode("reader");
-    html5QrCode.start({ facingMode: "environment" }, { fps: 10, qrbox:450, aspectRatio:innerHeight / innerWidth }, onScanSuccess);
+    let aspect = 0;
+    if(innerHeight>innerWidth)
+    {
+      aspect = innerHeight / innerWidth;
+    }
+    else
+    {
+      aspect = innerWidth / innerHeight;
+    }
+   
+    html5QrCode.start({ facingMode: "environment" }, { fps: 10, qrbox:{width:350, height:350}, aspectRatio: aspect}, onScanSuccess);
     }
   
   function onScanSuccess(qrCodeMessage) {

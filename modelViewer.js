@@ -65,7 +65,8 @@ let clone;
 
 function setup()
 {
-   
+    let exit = document.getElementById("exit-button");
+    exit.style.display = "none";
      setIndex();
      let modelViewer = document.getElementById("view");
     //let viewer = document.getElementById("view");
@@ -80,8 +81,13 @@ function setup()
 let ignore = true;
 function launchViewer()
 {
+    let exit = document.getElementById("exit-button");
+    exit.style.display = "block";
+    let start = document.getElementById("start-button");
+    start.style.display = "none";
    // setIndex();
-   //let modelViewer = document.getElementById("view");
+   let modelViewer = document.getElementById("view");
+   modelViewer.activateAR();
   // let exit = modelViewer.shadowRoot.querySelector('#default-exit-webxr-ar-button');
  //  exit.addEventListener("click", closeAR());
    //exit.innerHTML = "Exit AR";

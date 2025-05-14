@@ -205,8 +205,14 @@ h1 {
         width: 100%;
         display: flex;
     }
-  
-  
+    model-viewer::part(default-ar-button) 
+    {
+        display:none;
+    }
+    model-viewer::part(default-exit-webxr-ar-button) 
+    {
+        display:none;
+    }
   
     #ar-button:active {
       background-color: #E8EAED;

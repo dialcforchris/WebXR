@@ -32,8 +32,7 @@
        
        </div>
         
-       <button id="exit-button" onclick="closeAR()">Exit Story</button>
-          <span></span>
+   
         <div id="ar-prompt">
         </div>
       
@@ -41,7 +40,10 @@
           AR is not tracking!
         </button>
         </div>
-        
+        <div id="exit-button-holder">
+            <button id="exit-button" onclick="closeAR()">Exit Story</button>
+        </div>
+
     </model-viewer>
 
        
@@ -153,6 +155,16 @@ h1 {
     margin-right: 0%;
     margin-bottom: 20%;
     font-family: dejaVuSerif;
+}
+#exit-button-holder
+{
+    height: 100%;
+    width:100%;
+    align-items: end;
+    justify-content: end;
+    align-content: end;
+    justify-items: end;
+    
 }
     #exit-button
     {

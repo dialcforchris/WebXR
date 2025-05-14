@@ -15,7 +15,7 @@ const models = ["./portrait.gltf",
    "./audio/Seal-Spoon_FINAL_V2.wav"];
    
    const posters = ["./posters/portraitPoster.png",
-   "./posters/bowlPoster.png",
+   "./posters/bowlPoster.jpg",
    "./posters/spoonPoster.png"];
 let index = 0;
 
@@ -27,6 +27,7 @@ let spawned = false;
 
 function setIndex()
 {
+    let title = document.getElementById("title");
    let _result = "";
    _result = localStorage.getItem("result");
    if(_result==null)
@@ -36,23 +37,28 @@ function setIndex()
     else{
         _result = _result.toString().trim();
     }
+    let text="";
    console.log(_result);
    switch (_result) 
    {
        case "Miniature Portrait":
+        text = "Miniature\nPortrait";
            index = 0;
            break;
        case "Tea Bowl":
+        text = "Tea\nBowl";
            index = 1;
            break;
        case "Seal Spoon":
+        text = "Seal\nSpoon";
            index = 2;
            break;
        default:
         index = 0;
+        text = "Miniature\nPortrait";
            console.log("No match found for the result.");
    }
-   
+   title.textContent = text;
    return index;
 }
 
@@ -71,7 +77,8 @@ function setup()
      let modelViewer = document.getElementById("view");
     //let viewer = document.getElementById("view");
     modelViewer.src = models[index];
-    modelViewer.poster = posters[index];
+    let image = document.getElementById("circle-image");
+    image.src = posters[index];
     
   // viewer.dismissPoster();
     var x = document.getElementById("audio");//createElement("AUDIO");
@@ -91,6 +98,8 @@ function launchViewer()
   // let exit = modelViewer.shadowRoot.querySelector('#default-exit-webxr-ar-button');
  //  exit.addEventListener("click", closeAR());
    //exit.innerHTML = "Exit AR";
+//    let image = document.getElementById("circle-image");
+//    image.style.display = "none";
     playAudio();
     // let exit = document.getElementById("exit");
     // exit.style.display = "block";
@@ -117,7 +126,7 @@ function closeAR()
      //   ignore = false;
        // return;
     //}
-   window.open("./index.html","_self")
+   window.open("./intro.html","_self")
   // modelViewer.exitXR();
 
 

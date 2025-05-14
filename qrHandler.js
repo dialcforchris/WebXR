@@ -24,7 +24,7 @@ function startScanning() {
    
     localStorage.setItem("result", result);
 
-    window.open(`./portrait.html`,"_self")
+    window.open(`./viewer.html`,"_self")
     
   }
 

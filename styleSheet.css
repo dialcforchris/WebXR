@@ -3,6 +3,10 @@
     font-family: dejaVuSerif;
     src: url(DejaVuSerif.ttf);
  }
+ @font-face {
+    font-family: CenturyGothic;
+    src: url(CenturyGothic.ttf);
+ }
 body {
     margin: 0;
     padding: 0;
@@ -86,7 +90,7 @@ p {
     margin-right: 10%;
     color: #ffffff;
     text-align: center;
-    font-family: "Century Gothic" ;
+    font-family: "CenturyGothic" ;
 }
 
 .button-group {
@@ -112,7 +116,7 @@ button {
     transition: background-color 0.3s ease;
     height: 1vh;
     width: 1vw;
-    font-family: "Century Gothic";
+    font-family: "CenturyGothic";
     
 }
 .button-image {
@@ -157,7 +161,7 @@ button {
     margin-bottom: 10%;
     justify-self:anchor-center;
     padding: 0.8rem 1.5rem;
-   font-family: "Century Gothic";
+   font-family: "CenturyGothic";
     /* font-weight: bold; */
     z-index: 20;
     align-items: center;
@@ -190,7 +194,7 @@ button-container {
     /* margin-top: 5px; */
     
     padding: 0.8rem 1.5rem;
-    font-family: "Century Gothic";
+    font-family: "CenturyGothic";
     /* font-weight: bold; */
     /* background-image:url("button_V2.png"); */
     /* background-size: 120px 60px; */
@@ -215,7 +219,7 @@ button-container {
     margin-bottom: 10%;
     justify-self: center;
     padding: 0.8rem 1.5rem;
-   font-family: "Century Gothic";
+   font-family: "CenturyGothic";
     /* font-weight: bold; */
     z-index: 20;
     align-items: center;

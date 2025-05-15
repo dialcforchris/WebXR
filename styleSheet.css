@@ -1,11 +1,11 @@
 /* styleSheet.css */
 @font-face {
     font-family: dejaVuSerif;
-    src: url(DejaVuSerif.ttf);
+    src: url("./DejaVuSerif.ttf");
  }
  @font-face {
     font-family: centuryGothic;
-    src: url(centuryGothic.ttf);
+    src: url("./centuryGothic.ttf");
  }
 body {
     margin: 0;

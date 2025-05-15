@@ -4,7 +4,7 @@
   }
   @font-face {
     font-family: CenturyGothic;
-    src: url(CenturyGothic.ttf);
+    src: url(centuryGothic.ttf);
  }
 body{
     background-image:url("App\ background_final.jpg");

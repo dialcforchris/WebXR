@@ -94,7 +94,7 @@ function launchViewer()
     start.style.display = "none";
    // setIndex();
    let modelViewer = document.getElementById("view");
-   modelViewer.activateAR();
+   modelViewer.activateAR(); 
   // let exit = modelViewer.shadowRoot.querySelector('#default-exit-webxr-ar-button');
  //  exit.addEventListener("click", closeAR());
    //exit.innerHTML = "Exit AR";

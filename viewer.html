@@ -19,7 +19,7 @@
 </head>
 <body id = "body" onload="setup()">
     <audio id="audio"></audio>
-    <model-viewer id = "view" reveal = "manual" shadow-intensity="1" ar camera-controls touch-action="pan-y">
+    <model-viewer id = "view" loading = "auto" reveal = "manual" shadow-intensity="1" ar camera-controls touch-action="pan-y">
 
     <!-- <model-viewer id = "view" reveal = "manual" poster="./posters/spoonPoster.png" shadow-intensity="1" ar camera-controls touch-action="pan-y"> -->
         <div id="lazy-load-poster" slot="poster">
@@ -63,7 +63,7 @@
  }
 @font-face {
     font-family: CenturyGothic;
-    src: url(CenturyGothic.ttf);
+    src: url(centuryGothic.ttf);
  }
 #view
 {

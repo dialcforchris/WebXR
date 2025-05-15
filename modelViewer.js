@@ -88,24 +88,19 @@ function setup()
 let ignore = true;
 function launchViewer()
 {
+    let modelViewer = document.getElementById("view");
+    modelViewer.activateAR(); 
+    modelViewer.addEventListener("load", onLoaded());
+
+}
+function onLoaded()
+{
     let exit = document.getElementById("exit-button");
     exit.style.display = "block";
     let start = document.getElementById("start-button");
     start.style.display = "none";
-   // setIndex();
-   let modelViewer = document.getElementById("view");
-   modelViewer.activateAR(); 
-  // let exit = modelViewer.shadowRoot.querySelector('#default-exit-webxr-ar-button');
- //  exit.addEventListener("click", closeAR());
-   //exit.innerHTML = "Exit AR";
-//    let image = document.getElementById("circle-image");
-//    image.style.display = "none";
     playAudio();
-    // let exit = document.getElementById("exit");
-    // exit.style.display = "block";
-    //  exit.addEventListener("click", closeAR())
 }
-
 function playAudio() {
    var x = document.getElementById("audio");//createElement("AUDIO");
 

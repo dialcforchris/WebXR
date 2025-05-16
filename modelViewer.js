@@ -90,7 +90,7 @@ function launchViewer()
 {
     let modelViewer = document.getElementById("view");
     modelViewer.activateAR(); 
-    modelViewer.addEventListener("load", onLoaded());
+    modelViewer.addEventListener("loaded", onLoaded());
 
 }
 function onLoaded()

@@ -15,7 +15,7 @@ const models = ["./portrait.gltf",
    "./audio/Seal-Spoon_FINAL_V2.wav"];
    
    const posters = ["./posters/portraitPoster.png",
-   "./posters/bowlPoster.jpg",
+   "./posters/bowlPoster.png",
    "./posters/spoonPoster.png"];
 let index = 0;
 
